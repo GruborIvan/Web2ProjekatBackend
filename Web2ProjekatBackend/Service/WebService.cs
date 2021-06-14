@@ -14,59 +14,69 @@ namespace Web2ProjekatBackend.Service
 
             if (entity is Ekipa)
             {
+                if(context.Ekipe.Contains(entity as Ekipa)) { return false; }
                 context.Ekipe.Add(entity as Ekipa);
                 context.SaveChanges();
                 return true;
             }else if (entity is Element)
             {
+                if (context.Elementi.Contains(entity as Element)) { return false; }
                 context.Elementi.Add(entity as Element);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Incident)
             {
+                if (context.Incidents.Contains(entity as Incident)) { return false; }
                 context.Incidents.Add(entity as Incident);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is NalogRada)
             {
+                if (context.NaloziRada.Contains(entity as NalogRada)) { return false; }
                 context.NaloziRada.Add(entity as NalogRada);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is PlanRada)
             {
+                if (context.PlanoviRada.ToList().Find(x=>x.IdPlana.Equals((entity as PlanRada).IdPlana)) != null) { return false; }
                 context.PlanoviRada.Add(entity as PlanRada);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Poruka)
             {
+                if (context.Poruke.Contains(entity as Poruka)) { return false; }
                 context.Poruke.Add(entity as Poruka);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Potrosac)
             {
+                if (context.Potrosaci.Contains(entity as Potrosac)) { return false; }
                 context.Potrosaci.Add(entity as Potrosac);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Poziv)
             {
+                if (context.Pozivi.Contains(entity as Poziv)) { return false; }
                 context.Pozivi.Add(entity as Poziv);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Resolution)
             {
+                if (context.Resolutions.Contains(entity as Resolution)) { return false; }
                 context.Resolutions.Add(entity as Resolution);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is SafetyDocument)
             {
+                if (context.SafetyDocuments.Contains(entity as SafetyDocument)) { return false; }
                 context.SafetyDocuments.Add(entity as SafetyDocument);
                 context.SaveChanges();
                 return true;
@@ -81,61 +91,61 @@ namespace Web2ProjekatBackend.Service
 
             if (entity is Ekipa)
             {
-                context.Ekipe.Remove(entity as Ekipa);
+                context.Ekipe.Remove(context.Ekipe.ToList().Find(x => x.IdEkipe.Equals((entity as Ekipa).IdEkipe)));
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Element)
             {
-                context.Elementi.Remove(entity as Element);
+                context.Elementi.Remove(context.Elementi.ToList().Find(x => x.ID.Equals((entity as Element).ID)));
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Incident)
             {
-                context.Incidents.Remove(entity as Incident);
+                context.Incidents.Remove(context.Incidents.ToList().Find(x => x.ID.Equals((entity as Incident).ID)));
                 context.SaveChanges();
                 return true;
             }
             else if (entity is NalogRada)
             {
-                context.NaloziRada.Remove(entity as NalogRada);
+                context.NaloziRada.Remove(context.NaloziRada.ToList().Find(x => x.IdNaloga.Equals((entity as NalogRada).IdNaloga)));
                 context.SaveChanges();
                 return true;
             }
             else if (entity is PlanRada)
             {
-                context.PlanoviRada.Remove(entity as PlanRada);
+                context.PlanoviRada.Remove(context.PlanoviRada.ToList().Find(x => x.IdPlana.Equals((entity as PlanRada).IdPlana)));
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Poruka)
             {
-                context.Poruke.Remove(entity as Poruka);
+                context.Poruke.Remove(context.Poruke.ToList().Find(x => x.IdPoruke.Equals((entity as Poruka).IdPoruke)));
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Potrosac)
             {
-                context.Potrosaci.Remove(entity as Potrosac);
+                context.Potrosaci.Remove(context.Potrosaci.ToList().Find(x => x.Id.Equals((entity as Potrosac).Id)));
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Poziv)
             {
-                context.Pozivi.Remove(entity as Poziv);
+                context.Pozivi.Remove(context.Pozivi.ToList().Find(x => x.Id.Equals((entity as Poziv).Id)));
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Resolution)
             {
-                context.Resolutions.Remove(entity as Resolution);
+                context.Resolutions.Remove(context.Resolutions.ToList().Find(x => x.IdRes.Equals((entity as Resolution).IdRes)));
                 context.SaveChanges();
                 return true;
             }
             else if (entity is SafetyDocument)
             {
-                context.SafetyDocuments.Remove(entity as SafetyDocument);
+                context.SafetyDocuments.Remove(context.SafetyDocuments.ToList().Find(x => x.Id.Equals((entity as SafetyDocument).Id)));
                 context.SaveChanges();
                 return true;
             }
@@ -252,70 +262,70 @@ namespace Web2ProjekatBackend.Service
 
             if (entity is Ekipa)
             {
-                context.Ekipe.Remove(context.Ekipe.FirstOrDefault(x => x.IdEkipe == (entity as Ekipa).IdEkipe));
+                context.Ekipe.Remove(context.Ekipe.ToList().Find(x => x.IdEkipe.Equals((entity as Ekipa).IdEkipe)));
                 context.Ekipe.Add(entity as Ekipa);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Element)
             {
-                context.Elementi.Remove(context.Elementi.FirstOrDefault(x => x.ID == (entity as Element).ID));
+                context.Elementi.Remove(context.Elementi.ToList().Find(x => x.ID.Equals((entity as Element).ID)));
                 context.Elementi.Add(entity as Element);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Incident)
             {
-                context.Incidents.Remove(context.Incidents.FirstOrDefault(x => x.ID == (entity as Incident).ID));
+                context.Incidents.Remove(context.Incidents.ToList().Find(x => x.ID.Equals((entity as Incident).ID)));
                 context.Incidents.Add(entity as Incident);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is NalogRada)
             {
-                context.NaloziRada.Remove(context.NaloziRada.FirstOrDefault(x => x.IdIncidenta == (entity as NalogRada).IdIncidenta));
+                context.NaloziRada.Remove(context.NaloziRada.ToList().Find(x => x.IdNaloga.Equals((entity as NalogRada).IdNaloga)));
                 context.NaloziRada.Add(entity as NalogRada);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is PlanRada)
             {
-                context.PlanoviRada.Remove(context.PlanoviRada.FirstOrDefault(x => x.IdIncidenta == (entity as PlanRada).IdIncidenta));
+                context.PlanoviRada.Remove(context.PlanoviRada.ToList().Find(x=>x.IdPlana.Equals((entity as PlanRada).IdPlana)));
                 context.PlanoviRada.Add(entity as PlanRada);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Poruka)
             {
-                context.Poruke.Remove(context.Poruke.FirstOrDefault(x => x.IdPoruke == (entity as Poruka).IdPoruke));
+                context.Poruke.Remove(context.Poruke.ToList().Find(x => x.IdPoruke.Equals((entity as Poruka).IdPoruke)));
                 context.Poruke.Add(entity as Poruka);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Potrosac)
             {
-                context.Potrosaci.Remove(context.Potrosaci.FirstOrDefault(x => x.Id == (entity as Potrosac).Id));
+                context.Potrosaci.Remove(context.Potrosaci.ToList().Find(x => x.Id.Equals((entity as Potrosac).Id)));
                 context.Potrosaci.Add(entity as Potrosac);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Poziv)
             {
-                context.Pozivi.Remove(context.Pozivi.FirstOrDefault(x => x.Id == (entity as Poziv).Id));
+                context.Pozivi.Remove(context.Pozivi.ToList().Find(x => x.Id.Equals((entity as Poziv).Id)));
                 context.Pozivi.Add(entity as Poziv);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Resolution)
             {
-                context.Resolutions.Remove(context.Resolutions.FirstOrDefault(x => x.IdRes == (entity as Resolution).IdRes));
+                context.Resolutions.Remove(context.Resolutions.ToList().Find(x => x.IdRes.Equals((entity as Resolution).IdRes)));
                 context.Resolutions.Add(entity as Resolution);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is SafetyDocument)
             {
-                context.SafetyDocuments.Remove(context.SafetyDocuments.FirstOrDefault(x => x.Id == (entity as SafetyDocument).Id));
+                context.SafetyDocuments.Remove(context.SafetyDocuments.ToList().Find(x => x.Id.Equals((entity as SafetyDocument).Id)));
                 context.SafetyDocuments.Add(entity as SafetyDocument);
                 context.SaveChanges();
                 return true;
