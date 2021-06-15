@@ -14,27 +14,27 @@ namespace Web2ProjekatBackend.Service
 
             if (entity is Ekipa)
             {
-                if(context.Ekipe.Contains(entity as Ekipa)) { return false; }
+                if (context.Ekipe.ToList().Find(x => x.IdEkipe.Equals((entity as Ekipa).IdEkipe)) != null) { return false; }
                 context.Ekipe.Add(entity as Ekipa);
                 context.SaveChanges();
                 return true;
             }else if (entity is Element)
             {
-                if (context.Elementi.Contains(entity as Element)) { return false; }
+                if (context.Elementi.ToList().Find(x => x.ID.Equals((entity as Element).ID)) != null) { return false; }
                 context.Elementi.Add(entity as Element);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Incident)
             {
-                if (context.Incidents.Contains(entity as Incident)) { return false; }
+                if (context.Incidents.ToList().Find(x => x.ID.Equals((entity as Incident).ID)) != null) { return false; }
                 context.Incidents.Add(entity as Incident);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is NalogRada)
             {
-                if (context.NaloziRada.Contains(entity as NalogRada)) { return false; }
+                if (context.NaloziRada.ToList().Find(x => x.IdNaloga.Equals((entity as NalogRada).IdNaloga)) != null) { return false; }
                 context.NaloziRada.Add(entity as NalogRada);
                 context.SaveChanges();
                 return true;
@@ -48,35 +48,35 @@ namespace Web2ProjekatBackend.Service
             }
             else if (entity is Poruka)
             {
-                if (context.Poruke.Contains(entity as Poruka)) { return false; }
+                if (context.Poruke.ToList().Find(x => x.IdPoruke.Equals((entity as Poruka).IdPoruke)) != null) { return false; }
                 context.Poruke.Add(entity as Poruka);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Potrosac)
             {
-                if (context.Potrosaci.Contains(entity as Potrosac)) { return false; }
+                if (context.Potrosaci.ToList().Find(x => x.Id.Equals((entity as Potrosac).Id)) != null) { return false; }
                 context.Potrosaci.Add(entity as Potrosac);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Poziv)
             {
-                if (context.Pozivi.Contains(entity as Poziv)) { return false; }
+                if (context.Pozivi.ToList().Find(x => x.Id.Equals((entity as Poziv).Id)) != null) { return false; }
                 context.Pozivi.Add(entity as Poziv);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is Resolution)
             {
-                if (context.Resolutions.Contains(entity as Resolution)) { return false; }
+                if (context.Resolutions.ToList().Find(x => x.IdRes.Equals((entity as Resolution).IdRes)) != null) { return false; }
                 context.Resolutions.Add(entity as Resolution);
                 context.SaveChanges();
                 return true;
             }
             else if (entity is SafetyDocument)
             {
-                if (context.SafetyDocuments.Contains(entity as SafetyDocument)) { return false; }
+                if (context.SafetyDocuments.ToList().Find(x => x.Id.Equals((entity as SafetyDocument).Id)) != null) { return false; }
                 context.SafetyDocuments.Add(entity as SafetyDocument);
                 context.SaveChanges();
                 return true;

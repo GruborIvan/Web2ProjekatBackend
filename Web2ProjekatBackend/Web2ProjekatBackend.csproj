@@ -230,7 +230,13 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NaloziRadaController.cs" />
     <Compile Include="Controllers\PlanoviRadaController.cs" />
+    <Compile Include="Controllers\PorukaController.cs" />
+    <Compile Include="Controllers\PotrosacController.cs" />
+    <Compile Include="Controllers\PoziviController.cs" />
+    <Compile Include="Controllers\ResolutionsController.cs" />
+    <Compile Include="Controllers\SafetyDocumentsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -333,7 +339,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\NaloziRada\" />
     <Folder Include="Views\PlanoviRada\" />
+    <Folder Include="Views\Poruka\" />
+    <Folder Include="Views\Potrosac\" />
+    <Folder Include="Views\Pozivi\" />
+    <Folder Include="Views\Resolutions\" />
+    <Folder Include="Views\SafetyDocuments\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
