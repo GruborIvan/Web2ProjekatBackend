@@ -103,12 +103,24 @@ namespace Web2ProjekatBackend.Service
             }
             else if (entity is Incident)
             {
+                foreach(object item in context.NaloziRada.ToList().FindAll(x=>x.IdIncidenta.Equals((entity as Incident).ID)))
+                {
+                    deleteEntity(item);
+                }
+                foreach (object item in context.PlanoviRada.ToList().FindAll(x => x.IdIncidenta.Equals((entity as Incident).ID)))
+                {
+                    deleteEntity(item);
+                }
                 context.Incidents.Remove(context.Incidents.ToList().Find(x => x.ID.Equals((entity as Incident).ID)));
                 context.SaveChanges();
                 return true;
             }
             else if (entity is NalogRada)
             {
+                foreach (object item in context.PlanoviRada.ToList().FindAll(x => x.IdNalogaRada.Equals((entity as NalogRada).IdNaloga)))
+                {
+                    deleteEntity(item);
+                }
                 context.NaloziRada.Remove(context.NaloziRada.ToList().Find(x => x.IdNaloga.Equals((entity as NalogRada).IdNaloga)));
                 context.SaveChanges();
                 return true;
@@ -127,6 +139,10 @@ namespace Web2ProjekatBackend.Service
             }
             else if (entity is Potrosac)
             {
+                foreach (object item in context.Poruke.ToList().FindAll(x => x.IdKorisnika.Equals((entity as Potrosac).Id)))
+                {
+                    deleteEntity(item);
+                }
                 context.Potrosaci.Remove(context.Potrosaci.ToList().Find(x => x.Id.Equals((entity as Potrosac).Id)));
                 context.SaveChanges();
                 return true;
