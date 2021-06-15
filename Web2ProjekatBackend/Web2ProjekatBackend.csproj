@@ -256,6 +256,10 @@
     <Compile Include="Migrations\202106151908227_PravaMigracija.Designer.cs">
       <DependentUpon>202106151908227_PravaMigracija.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106152009403_Izmena potrosaca.cs" />
+    <Compile Include="Migrations\202106152009403_Izmena potrosaca.Designer.cs">
+      <DependentUpon>202106152009403_Izmena potrosaca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -346,10 +350,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\NaloziRada\" />
     <Folder Include="Views\Ekipa\" />
     <Folder Include="Views\Element\" />
     <Folder Include="Views\Incidenti\" />
+    <Folder Include="Views\NaloziRada\" />
     <Folder Include="Views\PlanoviRada\" />
     <Folder Include="Views\Poruka\" />
     <Folder Include="Views\Potrosac\" />
@@ -389,6 +393,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106151908227_PravaMigracija.resx">
       <DependentUpon>202106151908227_PravaMigracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106152009403_Izmena potrosaca.resx">
+      <DependentUpon>202106152009403_Izmena potrosaca.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

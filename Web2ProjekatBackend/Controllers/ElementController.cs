@@ -18,7 +18,7 @@ namespace Web2ProjekatBackend.Controllers
             proxy = new Service.WebService();
         }
 
-        [System.Web.Http.Authorize]
+        //[System.Web.Http.Authorize]
         [ResponseType(typeof(Models.Element))]
         public IHttpActionResult Put(string id, [FromBody] Element element)
         {
@@ -38,7 +38,7 @@ namespace Web2ProjekatBackend.Controllers
             return Ok(proxy.getEntity(TipEntiteta.ELEMENTS, element.ID));
         }
 
-        [System.Web.Http.Authorize]
+        //[System.Web.Http.Authorize]
         [ResponseType(typeof(Models.Element))]
         public IHttpActionResult Post(Element element)
         {
@@ -49,7 +49,7 @@ namespace Web2ProjekatBackend.Controllers
             proxy.addEntity(element);
             return CreatedAtRoute("DefaultApi", new { id = element.ID }, element);
         }
-        [System.Web.Http.Authorize]
+        //[System.Web.Http.Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult Delete(string id)
         {
@@ -63,7 +63,7 @@ namespace Web2ProjekatBackend.Controllers
             proxy.deleteEntity(el);
             return Ok();
         }
-        [System.Web.Http.Authorize]
+        //[System.Web.Http.Authorize]
         [ResponseType(typeof(Element))]
         public IHttpActionResult Get(string id)
         {
