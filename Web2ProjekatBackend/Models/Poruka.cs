@@ -20,6 +20,9 @@ namespace Web2ProjekatBackend.Models
         public string Tip { get; set; }
         [Required]
         public bool Procitana { get; set; }
+        [Required]
+        public DateTime Timestamp { get; set; }
+
 
         public Poruka() { }
     }

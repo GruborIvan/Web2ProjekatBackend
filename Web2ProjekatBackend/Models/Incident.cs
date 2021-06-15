@@ -30,13 +30,17 @@ namespace Web2ProjekatBackend.Models
         [Required]
         public DateTime ETR { get; set; }
         [Required]
-        public DateTime VrijemeRada { get; set; }
+        public DateTime VremeIncidenta { get; set; }
+        [Required]
+        public DateTime VremeRada { get; set; }
         [Required]
         public int AffectedPeople { get; set; }
         [Required]
         public int Pozivi { get; set; }
         [Required]
         public int Voltage { get; set; }
+        [StringLength(255)]
+        public string IdKorisnika { get; set; }
 
 
 
@@ -52,7 +56,7 @@ namespace Web2ProjekatBackend.Models
             this.ETA = eta;
             this.ATA = ata;
             this.ETR = etr;
-            this.VrijemeRada = vrijeme;
+            this.VremeRada = vrijeme;
             this.AffectedPeople = aff;
             this.Pozivi = pozivi;
             this.Voltage = voltage;

@@ -22,7 +22,7 @@ namespace Web2ProjekatBackend.Models
         public string CreatedBy { get; set; }
         [Required]
         [StringLength(255)]
-        public string IdNalogaRada { get; set; }
+        public string IdPlanRada { get; set; }
         [Required]
         [StringLength(255)]
         public string Ekipa { get; set; } // Uzimamo iz naloga za rad
@@ -47,7 +47,7 @@ namespace Web2ProjekatBackend.Models
             this.SafetyType = tip;
             this.Status = status;
             this.CreatedBy = createdby;
-            this.IdNalogaRada = idnalogarada;
+            this.IdPlanRada = idnalogarada;
             this.Ekipa = ekipa;
             this.Detalji = detalji;
             this.Beleske = beleske;
