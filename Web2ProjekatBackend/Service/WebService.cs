@@ -88,10 +88,13 @@ namespace Web2ProjekatBackend.Service
         {
             ApplicationDbContext context = new ApplicationDbContext();
 
-
             if (entity is Ekipa)
             {
-                foreach (object item in context.PlanoviRada.ToList().FindAll(x => x.IdIncidenta.Equals((entity as Ekipa).IdEkipe)))
+                foreach (object item in context.PlanoviRada.ToList().FindAll(x => x.Ekipa.Equals((entity as Ekipa).IdEkipe)))
+                {
+                    deleteEntity(item);
+                }
+                foreach (object item in context.SafetyDocuments.ToList().FindAll(x => x.Ekipa.Equals((entity as Ekipa).IdEkipe)))
                 {
                     deleteEntity(item);
                 }
@@ -121,6 +124,10 @@ namespace Web2ProjekatBackend.Service
             }
             else if (entity is NalogRada)
             {
+                foreach (object item in context.SafetyDocuments.ToList().FindAll(x => x.IdNalogaRada.Equals((entity as NalogRada).IdNaloga)))
+                {
+                    deleteEntity(item);
+                }
                 foreach (object item in context.PlanoviRada.ToList().FindAll(x => x.IdNalogaRada.Equals((entity as NalogRada).IdNaloga)))
                 {
                     deleteEntity(item);
