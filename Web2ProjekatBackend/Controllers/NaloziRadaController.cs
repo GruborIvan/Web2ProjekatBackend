@@ -1,26 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Mvc;
 using Web2ProjekatBackend.Models;
 
 namespace Web2ProjekatBackend.Controllers
 {
-    public class PlanoviRadaController : ApiController
+    public class NaloziRadaController : ApiController
     {
         // GET: PlanoviRada
         Service.IWebService proxy;
-        public PlanoviRadaController()
+        public NaloziRadaController()
         {
             proxy = new Service.WebService();
         }
-        [ResponseType(typeof(Models.PlanRada))]
-        public IHttpActionResult Put(string id, [FromBody] PlanRada planRada)
+
+        [System.Web.Http.Authorize]
+        [ResponseType(typeof(Models.NalogRada))]
+        public IHttpActionResult Put(string id, [FromBody] NalogRada nalogRada)
         {
-            if(planRada.IdPlana != id)
+            if (nalogRada.IdNaloga != id)
             {
                 return BadRequest();
             }
@@ -30,26 +32,28 @@ namespace Web2ProjekatBackend.Controllers
             }
             try
             {
-                proxy.updateEntity(planRada);
+                proxy.updateEntity(nalogRada);
             }
-            catch(Exception e) {return BadRequest();}
-            return Ok(proxy.getEntity(TipEntiteta.PLANOVI, planRada.IdPlana));
+            catch (Exception e) { return BadRequest(); }
+            return Ok(proxy.getEntity(TipEntiteta.NALOZI, nalogRada.IdNaloga));
         }
-        [ResponseType(typeof(Models.PlanRada))]
-        public IHttpActionResult Post(PlanRada planRada)
+        [System.Web.Http.Authorize]
+        [ResponseType(typeof(Models.NalogRada))]
+        public IHttpActionResult Post(NalogRada nalogRada)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            proxy.addEntity(planRada);
-            return CreatedAtRoute("DefaultApi", new { id = planRada.IdPlana }, planRada);
+            proxy.addEntity(nalogRada);
+            return CreatedAtRoute("DefaultApi", new { id = nalogRada.IdNaloga }, nalogRada);
         }
+        [System.Web.Http.Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult Delete(string id)
         {
             ApplicationDbContext context = new ApplicationDbContext();
-            PlanRada f = context.PlanoviRada.ToList().Find(x => x.IdPlana.Equals(id));
+            NalogRada f = context.NaloziRada.ToList().Find(x => x.IdNaloga.Equals(id));
             if (f == null)
             {
                 return NotFound();
@@ -58,25 +62,25 @@ namespace Web2ProjekatBackend.Controllers
             proxy.deleteEntity(f);
             return Ok();
         }
-        [ResponseType(typeof(PlanRada))]
+        [System.Web.Http.Authorize]
+        [ResponseType(typeof(NalogRada))]
         public IHttpActionResult Get(string id)
         {
-            PlanRada f = proxy.getEntity(TipEntiteta.PLANOVI, id) as PlanRada;
+            NalogRada f = proxy.getEntity(TipEntiteta.NALOZI, id) as NalogRada;
             if (f == null)
             {
                 return NotFound();
             }
             return Ok(f);
         }
-        public IEnumerable<PlanRada> Get()
+        public IEnumerable<NalogRada> Get()
         {
-            List<PlanRada> pr = new List<PlanRada>();
-            foreach(object item in proxy.getEntities(TipEntiteta.PLANOVI))
+            List<NalogRada> pr = new List<NalogRada>();
+            foreach (object item in proxy.getEntities(TipEntiteta.NALOZI))
             {
-                pr.Add(item as PlanRada);
+                pr.Add(item as NalogRada);
             }
             return pr;
         }
-
     }
 }
