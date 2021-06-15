@@ -91,6 +91,10 @@ namespace Web2ProjekatBackend.Service
 
             if (entity is Ekipa)
             {
+                foreach (object item in context.PlanoviRada.ToList().FindAll(x => x.IdIncidenta.Equals((entity as Ekipa).IdEkipe)))
+                {
+                    deleteEntity(item);
+                }
                 context.Ekipe.Remove(context.Ekipe.ToList().Find(x => x.IdEkipe.Equals((entity as Ekipa).IdEkipe)));
                 context.SaveChanges();
                 return true;
