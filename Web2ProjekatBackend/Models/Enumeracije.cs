@@ -42,6 +42,7 @@ namespace Web2ProjekatBackend.Models
         POTROSACI,
         POZIVI,
         RESOLUTIONS,
-        SAFETY_DOCUMENTS
+        SAFETY_DOCUMENTS,
+        OPREMA
     };
 }

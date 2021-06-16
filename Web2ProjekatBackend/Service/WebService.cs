@@ -81,6 +81,13 @@ namespace Web2ProjekatBackend.Service
                 context.SaveChanges();
                 return true;
             }
+            else if (entity is Oprema)
+            {
+                if (context.SafetyDocuments.ToList().Find(x => x.Id.Equals((entity as Oprema).Id)) != null) { return false; }
+                context.Oprema.Add(entity as Oprema);
+                context.SaveChanges();
+                return true;
+            }
             return false;
         }
 
@@ -242,6 +249,12 @@ namespace Web2ProjekatBackend.Service
                     return list;
                 case TipEntiteta.SAFETY_DOCUMENTS:
                     foreach (object item in context.SafetyDocuments)
+                    {
+                        list.Add(item);
+                    }
+                    return list;
+                case TipEntiteta.OPREMA:
+                    foreach (object item in context.Oprema)
                     {
                         list.Add(item);
                     }

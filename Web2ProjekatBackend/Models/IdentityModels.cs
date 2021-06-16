@@ -31,6 +31,8 @@ namespace Web2ProjekatBackend.Models
         public DbSet<Poziv> Pozivi { get; set; }
         public DbSet<Resolution> Resolutions { get; set; }
         public DbSet<SafetyDocument> SafetyDocuments { get; set; }
+        public DbSet<Oprema> Oprema { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

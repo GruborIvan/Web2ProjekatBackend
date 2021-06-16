@@ -242,6 +242,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NaloziRadaController.cs" />
     <Compile Include="Controllers\IncidentiController.cs" />
+    <Compile Include="Controllers\OpremaController.cs" />
     <Compile Include="Controllers\PlanoviRadaController.cs" />
     <Compile Include="Controllers\PorukaController.cs" />
     <Compile Include="Controllers\PotrosacController.cs" />
@@ -260,6 +261,10 @@
     <Compile Include="Migrations\202106152009403_Izmena potrosaca.Designer.cs">
       <DependentUpon>202106152009403_Izmena potrosaca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106161852431_Oprema.cs" />
+    <Compile Include="Migrations\202106161852431_Oprema.Designer.cs">
+      <DependentUpon>202106161852431_Oprema.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -270,6 +275,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Incident.cs" />
     <Compile Include="Models\NalogRada.cs" />
+    <Compile Include="Models\Oprema.cs" />
     <Compile Include="Models\PlanRada.cs" />
     <Compile Include="Models\Poruka.cs" />
     <Compile Include="Models\Potrosac.cs" />
@@ -396,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106152009403_Izmena potrosaca.resx">
       <DependentUpon>202106152009403_Izmena potrosaca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106161852431_Oprema.resx">
+      <DependentUpon>202106161852431_Oprema.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
