@@ -5,6 +5,15 @@ using System.Threading.Tasks;
 
 namespace Web2ProjekatBackend.Models
 {
+    public enum VrsteKorisnika
+    {
+        CLAN_EKIPE,
+        DISPECER,
+        RADNIK,
+        POTROSAC,
+        ADMINISTRATOR
+    }
+
     public enum TipIncidenta
     {
         PLANIRANI_INCIDENT,
