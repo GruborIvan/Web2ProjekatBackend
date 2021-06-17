@@ -21,5 +21,11 @@ namespace Web2ProjekatBackend.Models
         {
             Username = username;
         }
+
+        public UserInfo()
+        {
+
+        }
+
     }
 }

@@ -248,6 +248,7 @@
     <Compile Include="Controllers\PoziviController.cs" />
     <Compile Include="Controllers\ResolutionsController.cs" />
     <Compile Include="Controllers\SafetyDocumentsController.cs" />
+    <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -293,6 +294,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Repository\Interfaces\IUserRepository.cs" />
+    <Compile Include="Repository\Repository\UserRepository.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Service\IWebService.cs" />
     <Compile Include="Service\WebService.cs" />
