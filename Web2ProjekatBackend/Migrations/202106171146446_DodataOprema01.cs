@@ -3,7 +3,7 @@ namespace Web2ProjekatBackend.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class PravaMigracija : DbMigration
+    public partial class DodataOprema01 : DbMigration
     {
         public override void Up()
         {
@@ -49,6 +49,18 @@ namespace Web2ProjekatBackend.Migrations
                         IdKorisnika = c.String(maxLength: 255),
                     })
                 .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.Opremas",
+                c => new
+                    {
+                        IdOprema = c.String(nullable: false, maxLength: 128),
+                        Name = c.String(nullable: false, maxLength: 255),
+                        OpremaType = c.String(nullable: false, maxLength: 255),
+                        Coordinates = c.String(nullable: false, maxLength: 255),
+                        Address = c.String(nullable: false, maxLength: 255),
+                    })
+                .PrimaryKey(t => t.IdOprema);
             
             CreateTable(
                 "dbo.Nalozi",
@@ -118,6 +130,7 @@ namespace Web2ProjekatBackend.Migrations
                         Prioritet = c.Int(nullable: false),
                         TelefonskiBroj = c.String(),
                         PotrosacType = c.Int(nullable: false),
+                        IdEkipe = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -186,6 +199,19 @@ namespace Web2ProjekatBackend.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
+                "dbo.UserInfo",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Username = c.String(),
+                        VrsteKorisnika = c.Int(nullable: false),
+                        NazivProfilneSlike = c.String(),
+                        DatumRodjenja = c.DateTime(nullable: false),
+                        Adresa = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.AspNetUsers",
                 c => new
                     {
@@ -230,6 +256,19 @@ namespace Web2ProjekatBackend.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
             
+            CreateTable(
+                "dbo.OpremaIncidents",
+                c => new
+                    {
+                        Oprema_IdOprema = c.String(nullable: false, maxLength: 128),
+                        Incident_ID = c.String(nullable: false, maxLength: 128),
+                    })
+                .PrimaryKey(t => new { t.Oprema_IdOprema, t.Incident_ID })
+                .ForeignKey("dbo.Opremas", t => t.Oprema_IdOprema, cascadeDelete: true)
+                .ForeignKey("dbo.Incidents", t => t.Incident_ID, cascadeDelete: true)
+                .Index(t => t.Oprema_IdOprema)
+                .Index(t => t.Incident_ID);
+            
         }
         
         public override void Down()
@@ -238,15 +277,21 @@ namespace Web2ProjekatBackend.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.OpremaIncidents", "Incident_ID", "dbo.Incidents");
+            DropForeignKey("dbo.OpremaIncidents", "Oprema_IdOprema", "dbo.Opremas");
+            DropIndex("dbo.OpremaIncidents", new[] { "Incident_ID" });
+            DropIndex("dbo.OpremaIncidents", new[] { "Oprema_IdOprema" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropTable("dbo.OpremaIncidents");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
+            DropTable("dbo.UserInfo");
             DropTable("dbo.SafetyDocuments");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
@@ -256,6 +301,7 @@ namespace Web2ProjekatBackend.Migrations
             DropTable("dbo.Poruke");
             DropTable("dbo.Planovi");
             DropTable("dbo.Nalozi");
+            DropTable("dbo.Opremas");
             DropTable("dbo.Incidents");
             DropTable("dbo.Elements");
             DropTable("dbo.Ekipe");
