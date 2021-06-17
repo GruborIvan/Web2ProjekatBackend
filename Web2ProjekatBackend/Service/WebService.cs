@@ -124,7 +124,7 @@ namespace Web2ProjekatBackend.Service
             }
             else if (entity is NalogRada)
             {
-                foreach (object item in context.SafetyDocuments.ToList().FindAll(x => x.IdNalogaRada.Equals((entity as NalogRada).IdNaloga)))
+                foreach (object item in context.SafetyDocuments.ToList().FindAll(x => x.Id.Equals((entity as NalogRada).IdNaloga)))
                 {
                     deleteEntity(item);
                 }
