@@ -81,6 +81,13 @@ namespace Web2ProjekatBackend.Service
                 context.SaveChanges();
                 return true;
             }
+            else if(entity is Oprema)
+            {
+                if (context.Oprema.ToList().Find(x => x.IdOprema.Equals((entity as Oprema).IdOprema)) != null) { return false; }
+                context.Oprema.Add(entity as Oprema);
+                context.SaveChanges();
+                return true;
+            }
             return false;
         }
 
@@ -176,6 +183,12 @@ namespace Web2ProjekatBackend.Service
                 context.SaveChanges();
                 return true;
             }
+            else if (entity is Oprema)
+            {
+                context.Oprema.Remove(context.Oprema.ToList().Find(x => x.IdOprema.Equals((entity as Oprema).IdOprema)));
+                context.SaveChanges();
+                return true;
+            }
             return false;
         }
 
@@ -212,6 +225,12 @@ namespace Web2ProjekatBackend.Service
                     return list;
                 case TipEntiteta.PLANOVI:
                     foreach (object item in context.PlanoviRada)
+                    {
+                        list.Add(item);
+                    }
+                    return list;
+                case TipEntiteta.OPREMA:
+                    foreach (object item in context.Oprema)
                     {
                         list.Add(item);
                     }
@@ -278,6 +297,8 @@ namespace Web2ProjekatBackend.Service
                     return context.Resolutions.FirstOrDefault(x => x.IdRes == id);
                 case TipEntiteta.SAFETY_DOCUMENTS:
                     return context.SafetyDocuments.FirstOrDefault(x => x.Id == id);
+                case TipEntiteta.OPREMA:
+                    return context.Oprema.FirstOrDefault(x => x.IdOprema == id);
             }
             return new object();
         }
@@ -319,6 +340,13 @@ namespace Web2ProjekatBackend.Service
             {
                 context.PlanoviRada.Remove(context.PlanoviRada.ToList().Find(x=>x.IdPlana.Equals((entity as PlanRada).IdPlana)));
                 context.PlanoviRada.Add(entity as PlanRada);
+                context.SaveChanges();
+                return true;
+            }
+            if (entity is Oprema)
+            {
+                context.Oprema.Remove(context.Oprema.ToList().Find(x => x.IdOprema.Equals((entity as Oprema).IdOprema)));
+                context.Oprema.Add(entity as Oprema);
                 context.SaveChanges();
                 return true;
             }
