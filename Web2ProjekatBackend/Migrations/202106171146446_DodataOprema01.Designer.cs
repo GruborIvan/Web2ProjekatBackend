@@ -7,13 +7,13 @@ namespace Web2ProjekatBackend.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Revert : IMigrationMetadata
+    public sealed partial class DodataOprema01 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Revert));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DodataOprema01));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106162058087_Revert"; }
+            get { return "202106171146446_DodataOprema01"; }
         }
         
         string IMigrationMetadata.Source

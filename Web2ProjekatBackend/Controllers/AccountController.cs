@@ -337,10 +337,9 @@ namespace Web2ProjekatBackend.Controllers
             {
                 return GetErrorResult(result);
             }
-
             return Ok();
         }
-
+        [AllowAnonymous]
         // POST api/Account/RegisterExternal
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
@@ -373,7 +372,6 @@ namespace Web2ProjekatBackend.Controllers
             }
             return Ok();
         }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing && _userManager != null)
