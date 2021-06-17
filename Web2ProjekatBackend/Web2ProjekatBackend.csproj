@@ -253,13 +253,14 @@
     <Compile Include="Controllers\PoziviController.cs" />
     <Compile Include="Controllers\ResolutionsController.cs" />
     <Compile Include="Controllers\SafetyDocumentsController.cs" />
+    <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106171146446_DodataOprema01.cs" />
-    <Compile Include="Migrations\202106171146446_DodataOprema01.Designer.cs">
-      <DependentUpon>202106171146446_DodataOprema01.cs</DependentUpon>
+    <Compile Include="Migrations\202106171236297_NovaMigraCigra.cs" />
+    <Compile Include="Migrations\202106171236297_NovaMigraCigra.Designer.cs">
+      <DependentUpon>202106171236297_NovaMigraCigra.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -286,6 +287,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Repository\Interfaces\IUserRepository.cs" />
+    <Compile Include="Repository\Repository\UserRepository.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Service\IWebService.cs" />
     <Compile Include="Service\WebService.cs" />
@@ -396,8 +399,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106171146446_DodataOprema01.resx">
-      <DependentUpon>202106171146446_DodataOprema01.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106171236297_NovaMigraCigra.resx">
+      <DependentUpon>202106171236297_NovaMigraCigra.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

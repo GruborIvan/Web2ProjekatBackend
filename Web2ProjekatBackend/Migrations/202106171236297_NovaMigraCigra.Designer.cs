@@ -7,13 +7,13 @@ namespace Web2ProjekatBackend.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class DodataOprema01 : IMigrationMetadata
+    public sealed partial class NovaMigraCigra : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DodataOprema01));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NovaMigraCigra));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106171146446_DodataOprema01"; }
+            get { return "202106171236297_NovaMigraCigra"; }
         }
         
         string IMigrationMetadata.Source
