@@ -260,6 +260,14 @@
     <Compile Include="Migrations\202106151908227_PravaMigracija.Designer.cs">
       <DependentUpon>202106151908227_PravaMigracija.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106152009403_Izmena potrosaca.cs" />
+    <Compile Include="Migrations\202106152009403_Izmena potrosaca.Designer.cs">
+      <DependentUpon>202106152009403_Izmena potrosaca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106162058087_Revert.cs" />
+    <Compile Include="Migrations\202106162058087_Revert.Designer.cs">
+      <DependentUpon>202106162058087_Revert.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -395,6 +403,12 @@
     <EmbeddedResource Include="Migrations\202106151908227_PravaMigracija.resx">
       <DependentUpon>202106151908227_PravaMigracija.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106152009403_Izmena potrosaca.resx">
+      <DependentUpon>202106152009403_Izmena potrosaca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106162058087_Revert.resx">
+      <DependentUpon>202106162058087_Revert.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -16,10 +16,11 @@ namespace Web2ProjekatBackend.Models
         public int Prioritet { get; set; }
         public string TelefonskiBroj { get; set; }
         public TipPotrosaca PotrosacType { get; set; }
+        public string IdEkipe { get; set; }
 
 
         public Potrosac() { }
-        public Potrosac(string ime, string prezime, string id, string lokacija, int prio, string tele, TipPotrosaca tip)
+        public Potrosac(string ime, string prezime, string id, string lokacija, int prio, string tele, TipPotrosaca tip, string idEkipe)
         {
 
             this.Ime = ime;
@@ -29,7 +30,7 @@ namespace Web2ProjekatBackend.Models
             this.Prioritet = prio;
             this.TelefonskiBroj = tele;
             this.PotrosacType = tip;
-
+            this.IdEkipe = idEkipe;
 
         }
     }

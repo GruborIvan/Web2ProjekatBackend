@@ -15,9 +15,7 @@ namespace Web2ProjekatBackend.Models
         public string IdEkipe { get; set; }
         [Required]
         public string NazivEkipe { get; set; }
-        [Required]
-        public List<string> IdPotrosaci { get; set; }
-
+ 
 
         public Ekipa() { }
         public Ekipa(string idEkipe, string naziv)
@@ -25,7 +23,6 @@ namespace Web2ProjekatBackend.Models
 
             this.IdEkipe = idEkipe;
             this.NazivEkipe = naziv;
-            this.IdPotrosaci = new List<string>();
 
         }
 
