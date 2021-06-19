@@ -262,6 +262,10 @@
     <Compile Include="Migrations\202106171236297_NovaMigraCigra.Designer.cs">
       <DependentUpon>202106171236297_NovaMigraCigra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106191656484_admin-approve.cs" />
+    <Compile Include="Migrations\202106191656484_admin-approve.Designer.cs">
+      <DependentUpon>202106191656484_admin-approve.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -287,7 +291,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Repository\Interfaces\IIncidentRepository.cs" />
     <Compile Include="Repository\Interfaces\IUserRepository.cs" />
+    <Compile Include="Repository\Repository\IncidentRepository.cs" />
     <Compile Include="Repository\Repository\UserRepository.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Service\IWebService.cs" />
@@ -401,6 +407,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106171236297_NovaMigraCigra.resx">
       <DependentUpon>202106171236297_NovaMigraCigra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106191656484_admin-approve.resx">
+      <DependentUpon>202106191656484_admin-approve.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

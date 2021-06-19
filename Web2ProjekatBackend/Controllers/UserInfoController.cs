@@ -25,7 +25,22 @@ namespace Web2ProjekatBackend.Controllers
             {
                 return NotFound();
             }
+            if (!uifo.IsAdminApproved)
+            {
+                return BadRequest("Not admin approved!");
+            }
             return Ok(uifo);
+        }
+
+        public IHttpActionResult PostApproveAdmin(string username)
+        {
+            _repo.ApproveByAdmin(username);
+            return Ok();
+        }
+
+        public IQueryable<UserInfo> GetUsersForApprove()
+        {
+            return _repo.GetUsersForApprove();
         }
 
         public IHttpActionResult Post([FromBody] UserInfo uInfo)
@@ -35,6 +50,7 @@ namespace Web2ProjekatBackend.Controllers
                 return BadRequest(ModelState);
             }
 
+            uInfo.IsAdminApproved = false;
             _repo.PostUser(uInfo);
             return CreatedAtRoute("DefaultApi", new { id = uInfo.Id }, uInfo);
         }

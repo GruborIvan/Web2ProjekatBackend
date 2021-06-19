@@ -15,9 +15,22 @@ namespace Web2ProjekatBackend.Repository
             db = new ApplicationDbContext();
         }
 
+        public void ApproveByAdmin(string username)
+        {
+            UserInfo uinfo = db.UserInfos.Where(x => x.Username == username).FirstOrDefault();
+            uinfo.IsAdminApproved = true;
+            db.Entry<UserInfo>(uinfo).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+        }
+
         public UserInfo GetUserInfoByUsername(string username)
         {
             return db.UserInfos.Where(x => x.Username == username).FirstOrDefault();
+        }
+
+        public IQueryable<UserInfo> GetUsersForApprove()
+        {
+            return db.UserInfos.Where(x => x.IsAdminApproved == false);
         }
 
         public void PostUser(UserInfo userInfo)

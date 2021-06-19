@@ -13,6 +13,7 @@ namespace Web2ProjekatBackend.Controllers
     {
         // GET: Incidenti
         Service.IWebService proxy;
+
         public IncidentiController()
         {
             proxy = new Service.WebService();
