@@ -37,7 +37,8 @@ namespace Web2ProjekatBackend.Controllers
             catch (Exception e) { return BadRequest(); }
             return Ok(proxy.getEntity(TipEntiteta.POZIVI, poziv.Id));
         }
-        [System.Web.Http.Authorize]
+
+       //[System.Web.Http.Authorize]
         [ResponseType(typeof(Models.Poziv))]
         public IHttpActionResult Post(Poziv poziv)
         {

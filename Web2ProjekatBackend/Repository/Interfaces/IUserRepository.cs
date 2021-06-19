@@ -9,6 +9,10 @@ namespace Web2ProjekatBackend.Repository
     public interface IUserRepository
     {
         UserInfo GetUserInfoByUsername(string username);
+
+        IQueryable<UserInfo> GetUsersForApprove();
+
+        void ApproveByAdmin(string username);
         void PostUser(UserInfo userInfo);
     }
 }

@@ -16,6 +16,7 @@ namespace Web2ProjekatBackend.Models
         public string NazivProfilneSlike { get; set; }
         public DateTime DatumRodjenja { get; set; }
         public string Adresa { get; set; }
+        public bool IsAdminApproved { get; set; }
 
         public UserInfo(string username)
         {
