@@ -27,7 +27,7 @@ namespace Web2ProjekatBackend.Controllers
             }
             if (!uifo.IsAdminApproved)
             {
-                return BadRequest("Not admin approved!");
+                return BadRequest();
             }
             return Ok(uifo);
         }
@@ -49,8 +49,7 @@ namespace Web2ProjekatBackend.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-            uInfo.IsAdminApproved = false;
+  
             _repo.PostUser(uInfo);
             return CreatedAtRoute("DefaultApi", new { id = uInfo.Id }, uInfo);
         }

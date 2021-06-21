@@ -35,6 +35,14 @@ namespace Web2ProjekatBackend.Repository
 
         public void PostUser(UserInfo userInfo)
         {
+            if (userInfo.VrsteKorisnika == VrsteKorisnika.ADMINISTRATOR)
+            {
+                userInfo.IsAdminApproved = true;
+            }
+            else
+            {
+                userInfo.IsAdminApproved = false;
+            }
             db.UserInfos.Add(userInfo);
             db.SaveChanges();
         }

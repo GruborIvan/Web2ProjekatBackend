@@ -266,6 +266,22 @@
     <Compile Include="Migrations\202106191656484_admin-approve.Designer.cs">
       <DependentUpon>202106191656484_admin-approve.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106201741435_Oprema change.cs" />
+    <Compile Include="Migrations\202106201741435_Oprema change.Designer.cs">
+      <DependentUpon>202106201741435_Oprema change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106201817178_Oprema changeee.cs" />
+    <Compile Include="Migrations\202106201817178_Oprema changeee.Designer.cs">
+      <DependentUpon>202106201817178_Oprema changeee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106201858056_Migra.cs" />
+    <Compile Include="Migrations\202106201858056_Migra.Designer.cs">
+      <DependentUpon>202106201858056_Migra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106202002160_OpremaForeignKeyToString.cs" />
+    <Compile Include="Migrations\202106202002160_OpremaForeignKeyToString.Designer.cs">
+      <DependentUpon>202106202002160_OpremaForeignKeyToString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -292,8 +308,10 @@
     </Compile>
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Repository\Interfaces\IIncidentRepository.cs" />
+    <Compile Include="Repository\Interfaces\IOpremaRepository.cs" />
     <Compile Include="Repository\Interfaces\IUserRepository.cs" />
     <Compile Include="Repository\Repository\IncidentRepository.cs" />
+    <Compile Include="Repository\Repository\OpremaRepository.cs" />
     <Compile Include="Repository\Repository\UserRepository.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Service\IWebService.cs" />
@@ -410,6 +428,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106191656484_admin-approve.resx">
       <DependentUpon>202106191656484_admin-approve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106201741435_Oprema change.resx">
+      <DependentUpon>202106201741435_Oprema change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106201817178_Oprema changeee.resx">
+      <DependentUpon>202106201817178_Oprema changeee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106201858056_Migra.resx">
+      <DependentUpon>202106201858056_Migra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106202002160_OpremaForeignKeyToString.resx">
+      <DependentUpon>202106202002160_OpremaForeignKeyToString.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

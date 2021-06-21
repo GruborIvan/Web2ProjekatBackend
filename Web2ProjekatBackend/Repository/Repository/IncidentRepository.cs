@@ -19,6 +19,7 @@ namespace Web2ProjekatBackend.Repository.Repository
         public void AddIncident(Incident incident)
         {
             db.Incidents.Add(incident);
+            db.SaveChanges();
         }
 
         public Incident GetIncidentById(string id)
@@ -28,12 +29,7 @@ namespace Web2ProjekatBackend.Repository.Repository
 
         public IQueryable<Incident> GetIncidenti()
         {
-            IQueryable<Incident> incidenti = db.Incidents;
-            foreach(Incident inc in incidenti)
-            {
-                //inc.Oprema = db.Oprema;
-            }
-            return incidenti;
+           return db.Incidents;
         }
 
         public IQueryable<Incident> GetMyIncidenti(string username)

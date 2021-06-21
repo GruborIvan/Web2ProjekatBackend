@@ -6,17 +6,43 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using System.Web.Mvc;
 using Web2ProjekatBackend.Models;
+using Web2ProjekatBackend.Repository.Interfaces;
+using Web2ProjekatBackend.Repository.Repository;
 
 namespace Web2ProjekatBackend.Controllers
 {
     public class IncidentiController : ApiController
     {
         // GET: Incidenti
-        Service.IWebService proxy;
+        //Service.IWebService proxy;
+
+        IIncidentRepository proxy;
 
         public IncidentiController()
         {
-            proxy = new Service.WebService();
+            proxy = new IncidentRepository();
+        }
+
+        //[System.Web.Http.Authorize]
+        //[ResponseType(typeof(Incident))]
+        //public IHttpActionResult Get(string id)
+        //{
+        //    Incident i = proxy.GetIncidentById(id);
+        //    if (i == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(i);
+        //}
+
+        public IEnumerable<Incident> Get()
+        {
+            return proxy.GetIncidenti();
+        }
+
+        public IQueryable<Incident> Get(string username)
+        {
+            return proxy.GetMyIncidenti(username);
         }
 
         //[System.Web.Http.Authorize]
@@ -33,10 +59,10 @@ namespace Web2ProjekatBackend.Controllers
             }
             try
             {
-                proxy.updateEntity(incident);
+                proxy.UpdateIncident(incident);
             }
             catch (Exception e) { return BadRequest(); }
-            return Ok(proxy.getEntity(TipEntiteta.INCIDENTS, incident.ID));
+            return Ok(proxy.GetIncidentById(id));
         }
 
         //[System.Web.Http.Authorize]
@@ -47,42 +73,9 @@ namespace Web2ProjekatBackend.Controllers
             {
                 return BadRequest(ModelState);
             }
-            proxy.addEntity(incident);
+            proxy.AddIncident(incident);
             return CreatedAtRoute("DefaultApi", new { id = incident.ID }, incident);
         }
-        //[System.Web.Http.Authorize]
-        [ResponseType(typeof(void))]
-        public IHttpActionResult Delete(string id)
-        {
-            ApplicationDbContext context = new ApplicationDbContext();
-            Incident i = context.Incidents.ToList().Find(x => x.ID.Equals(id));
-            if (i == null)
-            {
-                return NotFound();
-            }
 
-            proxy.deleteEntity(i);
-            return Ok();
-        }
-        //[System.Web.Http.Authorize]
-        [ResponseType(typeof(Incident))]
-        public IHttpActionResult Get(string id)
-        {
-            Incident i = proxy.getEntity(TipEntiteta.INCIDENTS, id) as Incident;
-            if (i == null)
-            {
-                return NotFound();
-            }
-            return Ok(i);
-        }
-        public IEnumerable<Incident> Get()
-        {
-            List<Incident> i = new List<Incident>();
-            foreach (object item in proxy.getEntities(TipEntiteta.INCIDENTS))
-            {
-                i.Add(item as Incident);
-            }
-            return i;
-        }
     }
 }

@@ -297,8 +297,8 @@ namespace Web2ProjekatBackend.Service
                     return context.Resolutions.FirstOrDefault(x => x.IdRes == id);
                 case TipEntiteta.SAFETY_DOCUMENTS:
                     return context.SafetyDocuments.FirstOrDefault(x => x.Id == id);
-                case TipEntiteta.OPREMA:
-                    return context.Oprema.FirstOrDefault(x => x.IdOprema == id);
+               // case TipEntiteta.OPREMA:
+                 //   return context.Oprema.FirstOrDefault(x => x.IdOprema == id);
             }
             return new object();
         }
