@@ -55,6 +55,9 @@ namespace Web2ProjekatBackend.Models
         [StringLength(255)]
         public string IdKorisnika { get; set; }
 
+        [StringLength(255)]
+        public string Description { get; set; }
+
         public ICollection<Oprema> Oprema { get; set; }
 
         public Incident() { }

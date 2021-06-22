@@ -282,6 +282,10 @@
     <Compile Include="Migrations\202106202002160_OpremaForeignKeyToString.Designer.cs">
       <DependentUpon>202106202002160_OpremaForeignKeyToString.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106221655571_Description to INcidents.cs" />
+    <Compile Include="Migrations\202106221655571_Description to INcidents.Designer.cs">
+      <DependentUpon>202106221655571_Description to INcidents.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -440,6 +444,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106202002160_OpremaForeignKeyToString.resx">
       <DependentUpon>202106202002160_OpremaForeignKeyToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106221655571_Description to INcidents.resx">
+      <DependentUpon>202106221655571_Description to INcidents.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
