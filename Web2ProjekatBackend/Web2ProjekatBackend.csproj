@@ -286,6 +286,22 @@
     <Compile Include="Migrations\202106221655571_Description to INcidents.Designer.cs">
       <DependentUpon>202106221655571_Description to INcidents.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106242252547_Resolutiony.cs" />
+    <Compile Include="Migrations\202106242252547_Resolutiony.Designer.cs">
+      <DependentUpon>202106242252547_Resolutiony.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106242253441_Resolutiony2.cs" />
+    <Compile Include="Migrations\202106242253441_Resolutiony2.Designer.cs">
+      <DependentUpon>202106242253441_Resolutiony2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106251108427_removeResolutions.cs" />
+    <Compile Include="Migrations\202106251108427_removeResolutions.Designer.cs">
+      <DependentUpon>202106251108427_removeResolutions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106251109327_ReturnResolution.cs" />
+    <Compile Include="Migrations\202106251109327_ReturnResolution.Designer.cs">
+      <DependentUpon>202106251109327_ReturnResolution.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -313,9 +329,11 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Repository\Interfaces\IIncidentRepository.cs" />
     <Compile Include="Repository\Interfaces\IOpremaRepository.cs" />
+    <Compile Include="Repository\Interfaces\IResolutionRepository.cs" />
     <Compile Include="Repository\Interfaces\IUserRepository.cs" />
     <Compile Include="Repository\Repository\IncidentRepository.cs" />
     <Compile Include="Repository\Repository\OpremaRepository.cs" />
+    <Compile Include="Repository\Repository\ResolutionRepository.cs" />
     <Compile Include="Repository\Repository\UserRepository.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Service\IWebService.cs" />
@@ -447,6 +465,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106221655571_Description to INcidents.resx">
       <DependentUpon>202106221655571_Description to INcidents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106242252547_Resolutiony.resx">
+      <DependentUpon>202106242252547_Resolutiony.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106242253441_Resolutiony2.resx">
+      <DependentUpon>202106242253441_Resolutiony2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106251108427_removeResolutions.resx">
+      <DependentUpon>202106251108427_removeResolutions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106251109327_ReturnResolution.resx">
+      <DependentUpon>202106251109327_ReturnResolution.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
