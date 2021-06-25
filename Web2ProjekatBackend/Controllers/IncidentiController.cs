@@ -23,18 +23,6 @@ namespace Web2ProjekatBackend.Controllers
             proxy = new IncidentRepository();
         }
 
-        //[System.Web.Http.Authorize]
-        //[ResponseType(typeof(Incident))]
-        //public IHttpActionResult Get(string id)
-        //{
-        //    Incident i = proxy.GetIncidentById(id);
-        //    if (i == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return Ok(i);
-        //}
-
         public IEnumerable<Incident> Get()
         {
             return proxy.GetIncidenti();

@@ -36,6 +36,7 @@ namespace Web2ProjekatBackend.Models
         {
 
         }
+
         public Oprema(string id, string name, string opremaType, string coordinates, string address)
         {
             IdOprema = id;
