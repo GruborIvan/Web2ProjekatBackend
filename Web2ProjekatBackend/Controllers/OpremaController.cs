@@ -60,6 +60,12 @@ namespace Web2ProjekatBackend.Controllers
             return proxy.GetOprema();
         }
 
+        public IEnumerable<Oprema> GetOprema(string incId)
+        {
+            List<Oprema> opr = proxy.GetOprema().ToList();
+            return opr.Where(x => x.IncidentId == incId);
+        }
+
         //[System.Web.Http.Authorize]
         [ResponseType(typeof(Oprema))]
         public IHttpActionResult Get(string id)

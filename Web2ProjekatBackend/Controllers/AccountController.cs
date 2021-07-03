@@ -116,6 +116,7 @@ namespace Web2ProjekatBackend.Controllers
         }
 
         // POST api/Account/ChangePassword
+        [EnableCors(origins: "http://localhost:3000", headers: "*", methods: "*")]
         [Route("ChangePassword")]
         public async Task<IHttpActionResult> ChangePassword(ChangePasswordBindingModel model)
         {

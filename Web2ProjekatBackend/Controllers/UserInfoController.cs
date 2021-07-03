@@ -25,16 +25,16 @@ namespace Web2ProjekatBackend.Controllers
             {
                 return NotFound();
             }
-            if (!uifo.IsAdminApproved)
+            if (uifo.IsAdminApproved == 1)
             {
                 return BadRequest();
             }
             return Ok(uifo);
         }
 
-        public IHttpActionResult PostApproveAdmin(string username)
+        public IHttpActionResult PostApproveAdmin(string username,int val)
         {
-            _repo.ApproveByAdmin(username);
+            _repo.ApproveByAdmin(username,val);
             return Ok();
         }
 

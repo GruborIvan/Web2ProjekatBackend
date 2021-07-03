@@ -15,10 +15,10 @@ namespace Web2ProjekatBackend.Repository
             db = new ApplicationDbContext();
         }
 
-        public void ApproveByAdmin(string username)
+        public void ApproveByAdmin(string username, int val)
         {
             UserInfo uinfo = db.UserInfos.Where(x => x.Username == username).FirstOrDefault();
-            uinfo.IsAdminApproved = true;
+            uinfo.IsAdminApproved = val;
             db.Entry<UserInfo>(uinfo).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
         }
@@ -30,18 +30,18 @@ namespace Web2ProjekatBackend.Repository
 
         public IQueryable<UserInfo> GetUsersForApprove()
         {
-            return db.UserInfos.Where(x => x.IsAdminApproved == false);
+            return db.UserInfos.Where(x => x.IsAdminApproved == 1);
         }
 
         public void PostUser(UserInfo userInfo)
         {
             if (userInfo.VrsteKorisnika == VrsteKorisnika.ADMINISTRATOR)
             {
-                userInfo.IsAdminApproved = true;
+                userInfo.IsAdminApproved = 0;
             }
             else
             {
-                userInfo.IsAdminApproved = false;
+                userInfo.IsAdminApproved = 1;
             }
             db.UserInfos.Add(userInfo);
             db.SaveChanges();
