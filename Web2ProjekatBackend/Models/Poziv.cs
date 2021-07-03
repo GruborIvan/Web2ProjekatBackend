@@ -24,6 +24,7 @@ namespace Web2ProjekatBackend.Models
         [StringLength(255)]
         public string UsernameKor { get; set; }
 
+        public string IncidentId { get; set; }
 
         public Poziv() { }
 
