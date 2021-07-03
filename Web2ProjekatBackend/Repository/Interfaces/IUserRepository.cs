@@ -12,7 +12,7 @@ namespace Web2ProjekatBackend.Repository
 
         IQueryable<UserInfo> GetUsersForApprove();
 
-        void ApproveByAdmin(string username);
+        void ApproveByAdmin(string username, int val);
         void PostUser(UserInfo userInfo);
     }
 }
