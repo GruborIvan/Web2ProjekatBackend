@@ -69,10 +69,10 @@ namespace Web2ProjekatBackend.Service
             }
             else if (entity is Resolution)
             {
-                if (context.Resolutions.ToList().Find(x => x.IdRes.Equals((entity as Resolution).IdRes)) != null) { return false; }
-                context.Resolutions.Add(entity as Resolution);
-                context.SaveChanges();
-                return true;
+                //if (context.Resolutions.ToList().Find(x => x.IdRes.Equals((entity as Resolution).IdRes)) != null) { return false; }
+                //context.Resolutions.Add(entity as Resolution);
+                //context.SaveChanges();
+                //return true;
             }
             else if (entity is SafetyDocument)
             {
@@ -173,9 +173,9 @@ namespace Web2ProjekatBackend.Service
             }
             else if (entity is Resolution)
             {
-                context.Resolutions.Remove(context.Resolutions.ToList().Find(x => x.IdRes.Equals((entity as Resolution).IdRes)));
-                context.SaveChanges();
-                return true;
+                //context.Resolutions.Remove(context.Resolutions.ToList().Find(x => x.IdRes.Equals((entity as Resolution).IdRes)));
+                //context.SaveChanges();
+                //return true;
             }
             else if (entity is SafetyDocument)
             {
@@ -253,12 +253,12 @@ namespace Web2ProjekatBackend.Service
                         list.Add(item);
                     }
                     return list;
-                case TipEntiteta.RESOLUTIONS:
-                    foreach (object item in context.Resolutions)
-                    {
-                        list.Add(item);
-                    }
-                    return list;
+                //case TipEntiteta.RESOLUTIONS:
+                //    foreach (object item in context.Resolutions)
+                //    {
+                //        list.Add(item);
+                //    }
+                //    return list;
                 case TipEntiteta.SAFETY_DOCUMENTS:
                     foreach (object item in context.SafetyDocuments)
                     {
@@ -293,12 +293,12 @@ namespace Web2ProjekatBackend.Service
                     return context.Potrosaci.FirstOrDefault(x => x.Id == id);
                 case TipEntiteta.POZIVI:
                     return context.Pozivi.FirstOrDefault(x => x.Id == id);
-                case TipEntiteta.RESOLUTIONS:
-                    return context.Resolutions.FirstOrDefault(x => x.IdRes == id);
+                //case TipEntiteta.RESOLUTIONS:
+                //    return context.Resolutions.FirstOrDefault(x => x.IdRes == id);
                 case TipEntiteta.SAFETY_DOCUMENTS:
                     return context.SafetyDocuments.FirstOrDefault(x => x.Id == id);
-                case TipEntiteta.OPREMA:
-                    return context.Oprema.FirstOrDefault(x => x.IdOprema == id);
+               // case TipEntiteta.OPREMA:
+                 //   return context.Oprema.FirstOrDefault(x => x.IdOprema == id);
             }
             return new object();
         }
@@ -373,10 +373,10 @@ namespace Web2ProjekatBackend.Service
             }
             else if (entity is Resolution)
             {
-                context.Resolutions.Remove(context.Resolutions.ToList().Find(x => x.IdRes.Equals((entity as Resolution).IdRes)));
-                context.Resolutions.Add(entity as Resolution);
-                context.SaveChanges();
-                return true;
+                //context.Resolutions.Remove(context.Resolutions.ToList().Find(x => x.IdRes.Equals((entity as Resolution).IdRes)));
+                //context.Resolutions.Add(entity as Resolution);
+                //context.SaveChanges();
+                //return true;
             }
             else if (entity is SafetyDocument)
             {

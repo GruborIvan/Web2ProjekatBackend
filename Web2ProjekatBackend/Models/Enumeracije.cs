@@ -7,7 +7,7 @@ namespace Web2ProjekatBackend.Models
 {
     public enum VrsteKorisnika
     {
-        CLAN_EKIPE,
+        CLANEKIPE,
         DISPECER,
         RADNIK,
         POTROSAC,

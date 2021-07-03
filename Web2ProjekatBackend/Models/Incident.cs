@@ -14,34 +14,51 @@ namespace Web2ProjekatBackend.Models
 
         [Key]
         public string ID { get; set; }
+
         [Required]
         public TipIncidenta IncidentType { get; set; }
+
         [Required]
         public int Prioritet { get; set; }
+
         [Required]
         public bool Confirmed { get; set; }
+
         [Required]
         [StringLength(255)]
         public string Status { get; set; }
+
         [Required]
         public DateTime ETA { get; set; }
+
         [Required]
         public DateTime ATA { get; set; }
+
         [Required]
         public DateTime ETR { get; set; }
+
         [Required]
         public DateTime VremeIncidenta { get; set; }
+
         [Required]
         public DateTime VremeRada { get; set; }
+
         [Required]
         public int AffectedPeople { get; set; }
+
         [Required]
         public int Pozivi { get; set; }
+
         [Required]
         public int Voltage { get; set; }
+
         [StringLength(255)]
         public string IdKorisnika { get; set; }
-        public virtual ICollection<Oprema> Oprema { get; set; }
+
+        [StringLength(255)]
+        public string Description { get; set; }
+
+        public ICollection<Oprema> Oprema { get; set; }
 
         public Incident() { }
 

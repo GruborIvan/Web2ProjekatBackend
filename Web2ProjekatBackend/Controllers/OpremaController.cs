@@ -6,16 +6,21 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using System.Web.Mvc;
 using Web2ProjekatBackend.Models;
+using Web2ProjekatBackend.Repository.Interfaces;
+using Web2ProjekatBackend.Repository.Repository;
 
 namespace Web2ProjekatBackend.Controllers
 {
     public class OpremaController : ApiController
     {
         // GET: Oprema
-        Service.IWebService proxy;
+        //Service.IWebService proxy;
+
+        IOpremaRepository proxy;
+        
         public OpremaController()
         {
-            proxy = new Service.WebService();
+            proxy = new OpremaRepository();
         }
 
         //[System.Web.Http.Authorize]
@@ -32,56 +37,63 @@ namespace Web2ProjekatBackend.Controllers
             }
             try
             {
-                proxy.updateEntity(ekipa);
+                proxy.UpdateOprema(ekipa);
             }
             catch (Exception e) { return BadRequest(); }
-            return Ok(proxy.getEntity(TipEntiteta.OPREMA, ekipa.IdOprema));
+            return Ok(proxy.GetOpremaById(id));
         }
 
         //[System.Web.Http.Authorize]
         [ResponseType(typeof(Models.Oprema))]
-        public IHttpActionResult Post(Oprema ekipa)
+        public IHttpActionResult Post(Oprema oprema)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            proxy.addEntity(ekipa);
-            return CreatedAtRoute("DefaultApi", new { id = ekipa.IdOprema }, ekipa);
+            proxy.AddOprema(oprema);
+            return CreatedAtRoute("DefaultApi", new { id = oprema.IdOprema }, oprema);
         }
-        //[System.Web.Http.Authorize]
-        [ResponseType(typeof(void))]
-        public IHttpActionResult Delete(string id)
-        {
-            ApplicationDbContext context = new ApplicationDbContext();
-            Oprema ek = context.Oprema.ToList().Find(x => x.IdOprema.Equals(id));
-            if (ek == null)
-            {
-                return NotFound();
-            }
 
-            proxy.deleteEntity(ek);
-            return Ok();
+        public IEnumerable<Oprema> Get()
+        {
+            return proxy.GetOprema();
         }
+
+        public IEnumerable<Oprema> GetOprema(string incId)
+        {
+            List<Oprema> opr = proxy.GetOprema().ToList();
+            return opr.Where(x => x.IncidentId == incId);
+        }
+
         //[System.Web.Http.Authorize]
         [ResponseType(typeof(Oprema))]
         public IHttpActionResult Get(string id)
         {
-            Oprema ek = proxy.getEntity(TipEntiteta.OPREMA, id) as Oprema;
+            Oprema ek = proxy.GetOpremaById(id);
             if (ek == null)
             {
                 return NotFound();
             }
             return Ok(ek);
         }
-        public IEnumerable<Oprema> Get()
+
+
+
+
+        //[System.Web.Http.Authorize]
+        [ResponseType(typeof(void))]
+        public IHttpActionResult Delete(string id)
         {
-            List<Oprema> ek = new List<Oprema>();
-            foreach (object item in proxy.getEntities(TipEntiteta.OPREMA))
+            Oprema oprema = proxy.GetOpremaById(id);
+            
+            if (oprema == null)
             {
-                ek.Add(item as Oprema);
+                return NotFound();
             }
-            return ek;
+
+            proxy.DeleteOprema(oprema);
+            return Ok();
         }
     }
 }
