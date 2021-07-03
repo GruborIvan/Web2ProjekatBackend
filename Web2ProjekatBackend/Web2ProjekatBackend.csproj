@@ -310,6 +310,10 @@
     <Compile Include="Migrations\202107021936031_NewOne3.Designer.cs">
       <DependentUpon>202107021936031_NewOne3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107031258118_PozivAssign.cs" />
+    <Compile Include="Migrations\202107031258118_PozivAssign.Designer.cs">
+      <DependentUpon>202107031258118_PozivAssign.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -337,10 +341,12 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Repository\Interfaces\IIncidentRepository.cs" />
     <Compile Include="Repository\Interfaces\IOpremaRepository.cs" />
+    <Compile Include="Repository\Interfaces\IPoziviRepository.cs" />
     <Compile Include="Repository\Interfaces\IResolutionRepository.cs" />
     <Compile Include="Repository\Interfaces\IUserRepository.cs" />
     <Compile Include="Repository\Repository\IncidentRepository.cs" />
     <Compile Include="Repository\Repository\OpremaRepository.cs" />
+    <Compile Include="Repository\Repository\PozivRepository.cs" />
     <Compile Include="Repository\Repository\ResolutionRepository.cs" />
     <Compile Include="Repository\Repository\UserRepository.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -491,6 +497,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107021936031_NewOne3.resx">
       <DependentUpon>202107021936031_NewOne3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107031258118_PozivAssign.resx">
+      <DependentUpon>202107031258118_PozivAssign.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
