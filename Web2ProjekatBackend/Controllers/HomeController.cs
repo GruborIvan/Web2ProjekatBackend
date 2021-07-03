@@ -11,6 +11,8 @@ namespace Web2ProjekatBackend.Controllers
     {
         public ActionResult Index()
         {
+            DatabaseNotificationController dbnc = new DatabaseNotificationController();
+
             ViewBag.Title = "Home Page";
             PlanoviRadaController prc = new PlanoviRadaController();
             PlanRada pr = new PlanRada(TipRada.NEPLANIRANI_RAD, "asd", "asd", "asd", "asd", DateTime.Now, DateTime.Now, "asd", "asd", "asd", "asd", "asd", "asd", DateTime.Now);
