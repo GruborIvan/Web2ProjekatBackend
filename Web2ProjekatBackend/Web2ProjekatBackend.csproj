@@ -314,6 +314,22 @@
     <Compile Include="Migrations\202107031258118_PozivAssign.Designer.cs">
       <DependentUpon>202107031258118_PozivAssign.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107031612238_StringIdPozivi.cs" />
+    <Compile Include="Migrations\202107031612238_StringIdPozivi.Designer.cs">
+      <DependentUpon>202107031612238_StringIdPozivi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107031622089_fewq.cs" />
+    <Compile Include="Migrations\202107031622089_fewq.Designer.cs">
+      <DependentUpon>202107031622089_fewq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107031642180_fewqfdsafew.cs" />
+    <Compile Include="Migrations\202107031642180_fewqfdsafew.Designer.cs">
+      <DependentUpon>202107031642180_fewqfdsafew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107031643041_Calls again.cs" />
+    <Compile Include="Migrations\202107031643041_Calls again.Designer.cs">
+      <DependentUpon>202107031643041_Calls again.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -500,6 +516,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107031258118_PozivAssign.resx">
       <DependentUpon>202107031258118_PozivAssign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107031612238_StringIdPozivi.resx">
+      <DependentUpon>202107031612238_StringIdPozivi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107031622089_fewq.resx">
+      <DependentUpon>202107031622089_fewq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107031642180_fewqfdsafew.resx">
+      <DependentUpon>202107031642180_fewqfdsafew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107031643041_Calls again.resx">
+      <DependentUpon>202107031643041_Calls again.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
