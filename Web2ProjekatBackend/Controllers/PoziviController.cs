@@ -21,7 +21,22 @@ namespace Web2ProjekatBackend.Controllers
             proxy = new PozivRepository();
         }
 
-        //[System.Web.Http.Authorize]
+        
+        [System.Web.Http.Authorize]
+        public IEnumerable<Poziv> Get()
+        {
+            return proxy.GetPozivi();
+        }
+
+        [System.Web.Http.Authorize]
+        [ResponseType(typeof(Poziv))]
+        public IEnumerable<Poziv> Get(string incidentId)
+        {
+            return proxy.GetPoziviForIncident(incidentId);
+        }
+
+
+        [System.Web.Http.Authorize]
         [ResponseType(typeof(Models.Poziv))]
         public IHttpActionResult Post(Poziv poziv)
         {
@@ -34,16 +49,5 @@ namespace Web2ProjekatBackend.Controllers
         }
         
 
-        //[System.Web.Http.Authorize]
-        [ResponseType(typeof(Poziv))]
-        public IEnumerable<Poziv> Get(string incidentId)
-        {
-            return proxy.GetPoziviForIncident(incidentId);
-        }
-
-        public IEnumerable<Poziv> Get()
-        {
-            return proxy.GetPozivi();
-        }
     }
 }
