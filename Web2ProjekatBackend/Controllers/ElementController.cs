@@ -83,5 +83,35 @@ namespace Web2ProjekatBackend.Controllers
             }
             return el;
         }
+        [ResponseType(typeof(Element))]
+        public IEnumerable<Element> Search(string property, string value)
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
+            List<Element> ret = new List<Element>();
+
+            switch (property) 
+            {
+                case "id":
+                    ret = context.Elementi.ToList().FindAll(x => x.ID.Contains(value));
+                    break;
+                case "name":
+                    ret = context.Elementi.ToList().FindAll(x => x.Naziv.Contains(value));
+                    break;
+                case "address":
+                    ret = context.Elementi.ToList().FindAll(x => x.Adress.Contains(value));
+                    break;
+                case "longitude":
+                    ret = context.Elementi.ToList().FindAll(x => x.Longitude.Contains(value));
+                    break;
+                case "latitude":
+                    ret = context.Elementi.ToList().FindAll(x => x.Latitude.Contains(value));
+                    break;
+                case "type":
+                    ret = context.Elementi.ToList().FindAll(x => x.ElementType.ToString().Contains(value));
+                    break;
+            }
+            return ret;
+
+        }
     }
 }

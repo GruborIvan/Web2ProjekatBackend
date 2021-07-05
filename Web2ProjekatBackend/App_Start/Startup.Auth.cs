@@ -11,6 +11,9 @@ using Owin;
 using Web2ProjekatBackend.Providers;
 using Web2ProjekatBackend.Models;
 using Microsoft.Owin.Cors;
+using Microsoft.Owin.Security.Facebook;
+using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace Web2ProjekatBackend
 {
@@ -51,18 +54,34 @@ namespace Web2ProjekatBackend
 
 
             // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+            app.UseMicrosoftAccountAuthentication(
+                clientId: "2e04b092-f02d-4264-a98a-c9af52293561",
+                clientSecret: "sPD75~2yn~T.a6XppuL4Qd94AR.iyO3pgg");
 
             //app.UseTwitterAuthentication(
             //    consumerKey: "",
             //    consumerSecret: "");
 
             //app.UseFacebookAuthentication(
-            //    appId: "",
-            //    appSecret: "");
+            //    appId: "502546801013232",
+            //    appSecret: "c7738c1af441e0394499ed6db4fa5d3e");
+            
+            var facebookOptions = new Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions
+            {
+                AppId = "502546801013232",
+                AppSecret = "c7738c1af441e0394499ed6db4fa5d3e",
+                Provider = new FacebookAuthenticationProvider()
+                {
+                    OnAuthenticated = (context) =>
+                    {
+                        context.Identity.AddClaim(new System.Security.Claims.Claim("urn:facebook:access_token", context.AccessToken, ClaimValueTypes.String, "Facebook"));
 
+                        return Task.FromResult(0);
+                    }
+                },
+            };
+            facebookOptions.Scope.Add("email");
+            app.UseFacebookAuthentication(facebookOptions);
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
             //    ClientId = "",

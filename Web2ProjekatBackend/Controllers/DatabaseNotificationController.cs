@@ -16,6 +16,10 @@ namespace Web2ProjekatBackend.Controllers
 {
     public class DatabaseNotificationController : ApiController
     {
+        public DatabaseNotificationController()
+        {
+            new ChatWebSocketHandler();
+        }
         public HttpResponseMessage Get()
         {
             HttpContext.Current.AcceptWebSocketRequest(new ChatWebSocketHandler());
