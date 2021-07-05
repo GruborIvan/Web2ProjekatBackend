@@ -20,12 +20,10 @@ namespace Web2ProjekatBackend.Models
         public string OpremaType { get; set; }
 
         [Required]
-        [StringLength(255)]
-        public string Coordinates { get; set; }
+        public double CoordinateX { get; set; }
 
         [Required]
-        [StringLength(255)]
-        public string Address { get; set; }
+        public double CoordinateY { get; set; }
 
         public Incident Incident { get; set; }
 
@@ -37,13 +35,13 @@ namespace Web2ProjekatBackend.Models
 
         }
 
-        public Oprema(string id, string name, string opremaType, string coordinates, string address)
+        public Oprema(string id, string name, string opremaType, double CoordinateX, double CoordinateY)
         {
             IdOprema = id;
             Name = name;
             OpremaType = opremaType;
-            Coordinates = coordinates;
-            Address = address;
+            this.CoordinateX = CoordinateX;
+            this.CoordinateY = CoordinateY;
         }
     }
 }
