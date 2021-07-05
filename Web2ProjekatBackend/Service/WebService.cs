@@ -60,13 +60,13 @@ namespace Web2ProjekatBackend.Service
                 context.SaveChanges();
                 return true;
             }
-            else if (entity is Poziv)
-            {
-                if (context.Pozivi.ToList().Find(x => x.Id.Equals((entity as Poziv).Id)) != null) { return false; }
-                context.Pozivi.Add(entity as Poziv);
-                context.SaveChanges();
-                return true;
-            }
+            //else if (entity is Poziv)
+            //{
+            //    if (context.Pozivi.ToList().Find(x => x.Id.Equals((entity as Poziv).Id)) != null) { return false; }
+            //    context.Pozivi.Add(entity as Poziv);
+            //    context.SaveChanges();
+            //    return true;
+            //}
             else if (entity is Resolution)
             {
                 //if (context.Resolutions.ToList().Find(x => x.IdRes.Equals((entity as Resolution).IdRes)) != null) { return false; }
@@ -165,12 +165,12 @@ namespace Web2ProjekatBackend.Service
                 context.SaveChanges();
                 return true;
             }
-            else if (entity is Poziv)
-            {
-                context.Pozivi.Remove(context.Pozivi.ToList().Find(x => x.Id.Equals((entity as Poziv).Id)));
-                context.SaveChanges();
-                return true;
-            }
+            //else if (entity is Poziv)
+            //{
+            //    context.Pozivi.Remove(context.Pozivi.ToList().Find(x => x.Id.Equals((entity as Poziv).Id)));
+            //    context.SaveChanges();
+            //    return true;
+            //}
             else if (entity is Resolution)
             {
                 //context.Resolutions.Remove(context.Resolutions.ToList().Find(x => x.IdRes.Equals((entity as Resolution).IdRes)));
@@ -247,12 +247,12 @@ namespace Web2ProjekatBackend.Service
                         list.Add(item);
                     }
                     return list;
-                case TipEntiteta.POZIVI:
-                    foreach (object item in context.Pozivi)
-                    {
-                        list.Add(item);
-                    }
-                    return list;
+                //case TipEntiteta.POZIVI:
+                //    foreach (object item in context.Pozivi)
+                //    {
+                //        list.Add(item);
+                //    }
+                //    return list;
                 //case TipEntiteta.RESOLUTIONS:
                 //    foreach (object item in context.Resolutions)
                 //    {
@@ -291,8 +291,8 @@ namespace Web2ProjekatBackend.Service
                     return context.Poruke.FirstOrDefault(x => x.IdPoruke == id);
                 case TipEntiteta.POTROSACI:
                     return context.Potrosaci.FirstOrDefault(x => x.Id == id);
-                case TipEntiteta.POZIVI:
-                    return context.Pozivi.FirstOrDefault(x => x.Id == id);
+                //case TipEntiteta.POZIVI:
+                //    return context.Pozivi.FirstOrDefault(x => x.Id == id);
                 //case TipEntiteta.RESOLUTIONS:
                 //    return context.Resolutions.FirstOrDefault(x => x.IdRes == id);
                 case TipEntiteta.SAFETY_DOCUMENTS:
@@ -364,13 +364,13 @@ namespace Web2ProjekatBackend.Service
                 context.SaveChanges();
                 return true;
             }
-            else if (entity is Poziv)
-            {
-                context.Pozivi.Remove(context.Pozivi.ToList().Find(x => x.Id.Equals((entity as Poziv).Id)));
-                context.Pozivi.Add(entity as Poziv);
-                context.SaveChanges();
-                return true;
-            }
+            //else if (entity is Poziv)
+            //{
+            //    context.Pozivi.Remove(context.Pozivi.ToList().Find(x => x.Id.Equals((entity as Poziv).Id)));
+            //    context.Pozivi.Add(entity as Poziv);
+            //    context.SaveChanges();
+            //    return true;
+            //}
             else if (entity is Resolution)
             {
                 //context.Resolutions.Remove(context.Resolutions.ToList().Find(x => x.IdRes.Equals((entity as Resolution).IdRes)));
