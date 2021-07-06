@@ -11,6 +11,8 @@ namespace Web2ProjekatBackend.Controllers
     {
         public ActionResult Index()
         {
+            DatabaseNotificationController dbnc = new DatabaseNotificationController();
+
             ViewBag.Title = "Home Page";
             return View();
         }
