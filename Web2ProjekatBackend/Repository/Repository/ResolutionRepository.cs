@@ -27,9 +27,17 @@ namespace Web2ProjekatBackend.Repository.Repository
             return db.Resolutions;
         }
 
-        public IQueryable<Resolution> GetResolutionsForIncident(string incidentId)
+        public Resolution GetResolutionsForIncident(string incidentId)
         {
-            return db.Resolutions.Where(x => x.IncidentId == incidentId);
+            List<Resolution> ress = db.Resolutions.Where(x => x.IncidentId == incidentId).ToList();
+            if (ress.Count > 0)
+            {
+                return ress[0];
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

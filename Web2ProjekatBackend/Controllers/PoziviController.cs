@@ -22,13 +22,14 @@ namespace Web2ProjekatBackend.Controllers
         }
 
         
-        [System.Web.Http.Authorize]
+        //[System.Web.Http.Authorize]
         public IEnumerable<Poziv> Get()
         {
             return proxy.GetPozivi();
         }
 
-        [System.Web.Http.Authorize]
+
+        //[System.Web.Http.Authorize]
         [ResponseType(typeof(Poziv))]
         public IEnumerable<Poziv> Get(string incidentId)
         {
@@ -36,7 +37,7 @@ namespace Web2ProjekatBackend.Controllers
         }
 
 
-        [System.Web.Http.Authorize]
+       // [System.Web.Http.Authorize]
         [ResponseType(typeof(Models.Poziv))]
         public IHttpActionResult Post(Poziv poziv)
         {
@@ -48,6 +49,5 @@ namespace Web2ProjekatBackend.Controllers
             return CreatedAtRoute("DefaultApi", new { id = poziv.Id }, poziv);
         }
         
-
     }
 }

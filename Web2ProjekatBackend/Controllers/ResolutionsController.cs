@@ -26,9 +26,14 @@ namespace Web2ProjekatBackend.Controllers
             return proxy.GetResolutions();
         }
 
-        public IEnumerable<Resolution> Get(string incidentId)
+        public IHttpActionResult Get(string incidentId)
         {
-            return proxy.GetResolutionsForIncident(incidentId);
+            Resolution res = proxy.GetResolutionsForIncident(incidentId);
+            if (res == null)
+            {
+                return BadRequest();
+            }
+            return Ok(res);
         }
 
         public IHttpActionResult Post([FromBody] Resolution resolution)
