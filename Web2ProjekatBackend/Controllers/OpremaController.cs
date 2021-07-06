@@ -20,13 +20,13 @@ namespace Web2ProjekatBackend.Controllers
             proxy = new OpremaRepository();
         }
 
-        [System.Web.Http.Authorize]
+       // [System.Web.Http.Authorize]
         public IEnumerable<Oprema> Get()
         {
             return proxy.GetOprema();
         }
 
-        [System.Web.Http.Authorize]
+       // [System.Web.Http.Authorize]
         public IEnumerable<Oprema> GetOprema(string incId)
         {
             List<Oprema> opr = proxy.GetOprema().ToList();
@@ -34,7 +34,7 @@ namespace Web2ProjekatBackend.Controllers
         }
 
 
-        [System.Web.Http.Authorize]
+        //[System.Web.Http.Authorize]
         [ResponseType(typeof(Models.Oprema))]
         public IHttpActionResult Put(string id, [FromBody] Oprema ekipa)
         {
@@ -54,7 +54,7 @@ namespace Web2ProjekatBackend.Controllers
             return Ok(proxy.GetOpremaById(id));
         }
 
-        [System.Web.Http.Authorize]
+       // [System.Web.Http.Authorize]
         [ResponseType(typeof(Models.Oprema))]
         public IHttpActionResult Post(Oprema oprema)
         {
@@ -67,7 +67,7 @@ namespace Web2ProjekatBackend.Controllers
         }
 
         
-        [System.Web.Http.Authorize]
+       // [System.Web.Http.Authorize]
         [ResponseType(typeof(Oprema))]
         public IHttpActionResult Get(string id)
         {
@@ -80,7 +80,7 @@ namespace Web2ProjekatBackend.Controllers
         }
 
 
-        [System.Web.Http.Authorize]
+       // [System.Web.Http.Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult Delete(string id)
         {

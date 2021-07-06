@@ -28,7 +28,7 @@ namespace Web2ProjekatBackend.Controllers
             return pr;
         }
 
-        [System.Web.Http.Authorize]
+        //[System.Web.Http.Authorize]
         [ResponseType(typeof(NalogRada))]
         public IHttpActionResult Get(string id)
         {
@@ -41,7 +41,7 @@ namespace Web2ProjekatBackend.Controllers
         }
 
 
-        [System.Web.Http.Authorize]
+        //[System.Web.Http.Authorize]
         [ResponseType(typeof(Models.NalogRada))]
         public IHttpActionResult Post(NalogRada nalogRada)
         {
@@ -54,7 +54,7 @@ namespace Web2ProjekatBackend.Controllers
         }
 
 
-        [System.Web.Http.Authorize]
+        //[System.Web.Http.Authorize]
         [ResponseType(typeof(Models.NalogRada))]
         public IHttpActionResult Put(string id, [FromBody] NalogRada nalogRada)
         {
@@ -75,7 +75,7 @@ namespace Web2ProjekatBackend.Controllers
         }
         
 
-        [System.Web.Http.Authorize]
+        //[System.Web.Http.Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult Delete(string id)
         {

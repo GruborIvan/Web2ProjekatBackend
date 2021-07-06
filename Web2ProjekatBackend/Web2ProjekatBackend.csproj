@@ -253,8 +253,8 @@
     <Compile Include="Controllers\PoziviController.cs" />
     <Compile Include="Controllers\ResolutionsController.cs" />
     <Compile Include="Controllers\SafetyDocumentsController.cs" />
+    <Compile Include="Controllers\SingleIncidentController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

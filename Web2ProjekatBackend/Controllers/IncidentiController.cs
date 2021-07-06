@@ -20,19 +20,19 @@ namespace Web2ProjekatBackend.Controllers
             proxy = new IncidentRepository();
         }
 
-        [System.Web.Http.Authorize]
+        //[System.Web.Http.Authorize]
         public IEnumerable<Incident> Get()
         {
             return proxy.GetIncidenti();
         }
 
-        [System.Web.Http.Authorize]
+        //[System.Web.Http.Authorize]
         public IQueryable<Incident> Get(string username)
         {
             return proxy.GetMyIncidenti(username);
         }
 
-        [System.Web.Http.Authorize]
+       // [System.Web.Http.Authorize]
         [ResponseType(typeof(Models.Incident))]
         public IHttpActionResult Put(string id, [FromBody] Incident incident)
         {
@@ -52,7 +52,7 @@ namespace Web2ProjekatBackend.Controllers
             return Ok(proxy.GetIncidentById(id));
         }
 
-        [System.Web.Http.Authorize]
+        //[System.Web.Http.Authorize]
         [ResponseType(typeof(Models.Incident))]
         public IHttpActionResult Post(Incident incident)
         {
