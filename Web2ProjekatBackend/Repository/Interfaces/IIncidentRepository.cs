@@ -14,5 +14,6 @@ namespace Web2ProjekatBackend.Repository.Interfaces
         Incident GetIncidentById(string id);
         void AddIncident(Incident incident);
         void UpdateIncident(Incident incident);
+        IQueryable<Incident> SortByColumn (string columnName);
     }
 }
