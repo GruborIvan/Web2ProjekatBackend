@@ -23,7 +23,7 @@ namespace Web2ProjekatBackend.Repository.Repository
             {
                 case "ID":
                     return db.NaloziRada.OrderBy(x => x.IdNaloga);
-                case "TipNaloga":
+                case "TipNalogaRada":
                     return db.NaloziRada.OrderBy(x => x.NalogType);
                 case "CreatedTime":
                     return db.NaloziRada.OrderBy(x => x.CreatedTime);
