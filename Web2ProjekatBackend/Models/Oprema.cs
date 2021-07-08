@@ -25,6 +25,9 @@ namespace Web2ProjekatBackend.Models
         [Required]
         public double CoordinateY { get; set; }
 
+        [Required]
+        public string Address { get; set; }
+
         public Incident Incident { get; set; }
 
         public string IncidentId { get; set; }

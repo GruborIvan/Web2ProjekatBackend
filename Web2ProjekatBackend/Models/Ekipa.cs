@@ -13,6 +13,7 @@ namespace Web2ProjekatBackend.Models
 
         [Key]
         public string IdEkipe { get; set; }
+
         [Required]
         public string NazivEkipe { get; set; }
  

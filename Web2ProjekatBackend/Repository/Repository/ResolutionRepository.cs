@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using Web2ProjekatBackend.Models;
@@ -37,6 +39,19 @@ namespace Web2ProjekatBackend.Repository.Repository
             else
             {
                 return null;
+            }
+        }
+
+        public void UpdateResolution(Resolution resolution)
+        {
+            try
+            {
+                db.Entry<Resolution>(resolution).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+            catch(DBConcurrencyException ex)
+            {
+                Trace.TraceInformation(ex.Message);
             }
         }
     }
