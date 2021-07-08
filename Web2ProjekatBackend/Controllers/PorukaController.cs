@@ -82,5 +82,20 @@ namespace Web2ProjekatBackend.Controllers
             }
             return pr;
         }
+        public IQueryable<Poruka> GetByType(TipPoruke tip)
+        {
+            return null;
+        }
+
+        public void ReadAll(List<string> ajdijevi)
+        {
+            foreach (string item in ajdijevi)
+            {
+                Poruka p = db.Poruke.ToList().Find(x => x.IdPoruke == item);
+                p.Procitana = true;
+                db.Entry<Poruka>(p).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+        }
     }
 }

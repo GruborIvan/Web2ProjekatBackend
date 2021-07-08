@@ -3,7 +3,7 @@ namespace Web2ProjekatBackend.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class TestMigra : DbMigration
+    public partial class novaMigracija : DbMigration
     {
         public override void Up()
         {
@@ -60,6 +60,7 @@ namespace Web2ProjekatBackend.Migrations
                         OpremaType = c.String(nullable: false, maxLength: 255),
                         CoordinateX = c.Double(nullable: false),
                         CoordinateY = c.Double(nullable: false),
+                        Address = c.String(nullable: false),
                         IncidentId = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.IdOprema)
@@ -117,7 +118,7 @@ namespace Web2ProjekatBackend.Migrations
                         IdPoruke = c.String(nullable: false, maxLength: 128),
                         IdKorisnika = c.String(nullable: false),
                         Sadrzaj = c.String(nullable: false),
-                        Tip = c.String(nullable: false),
+                        Tip = c.Int(nullable: false),
                         Procitana = c.Boolean(nullable: false),
                         Timestamp = c.DateTime(nullable: false),
                     })

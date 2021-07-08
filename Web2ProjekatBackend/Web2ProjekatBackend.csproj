@@ -271,13 +271,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107061747108_TestMigra.cs" />
-    <Compile Include="Migrations\202107061747108_TestMigra.Designer.cs">
-      <DependentUpon>202107061747108_TestMigra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107062034386_Addres Add to Oprema.cs" />
-    <Compile Include="Migrations\202107062034386_Addres Add to Oprema.Designer.cs">
-      <DependentUpon>202107062034386_Addres Add to Oprema.cs</DependentUpon>
+    <Compile Include="Migrations\202107081538304_novaMigracija.cs" />
+    <Compile Include="Migrations\202107081538304_novaMigracija.Designer.cs">
+      <DependentUpon>202107081538304_novaMigracija.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -306,6 +302,7 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Repository\Interfaces\IIncidentRepository.cs" />
     <Compile Include="Repository\Interfaces\INaloziRadaRepository.cs" />
+    <Compile Include="Repository\Interfaces\INotificationRepository.cs" />
     <Compile Include="Repository\Interfaces\IOpremaRepository.cs" />
     <Compile Include="Repository\Interfaces\IPlanoviRadaRepository.cs" />
     <Compile Include="Repository\Interfaces\IPoziviRepository.cs" />
@@ -314,6 +311,7 @@
     <Compile Include="Repository\Interfaces\IUserRepository.cs" />
     <Compile Include="Repository\Repository\IncidentRepository.cs" />
     <Compile Include="Repository\Repository\NaloziRadaRepository.cs" />
+    <Compile Include="Repository\Repository\NotificationRepository.cs" />
     <Compile Include="Repository\Repository\OpremaRepository.cs" />
     <Compile Include="Repository\Repository\PlanoviRadaRepository.cs" />
     <Compile Include="Repository\Repository\PozivRepository.cs" />
@@ -432,11 +430,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107061747108_TestMigra.resx">
-      <DependentUpon>202107061747108_TestMigra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107062034386_Addres Add to Oprema.resx">
-      <DependentUpon>202107062034386_Addres Add to Oprema.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107081538304_novaMigracija.resx">
+      <DependentUpon>202107081538304_novaMigracija.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

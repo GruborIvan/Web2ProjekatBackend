@@ -17,7 +17,7 @@ namespace Web2ProjekatBackend.Models
         [Required]
         public string Sadrzaj { get; set; }
         [Required]
-        public string Tip { get; set; }
+        public TipPoruke Tip { get; set; }
         [Required]
         public bool Procitana { get; set; }
         [Required]

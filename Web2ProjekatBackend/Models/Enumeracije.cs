@@ -54,4 +54,12 @@ namespace Web2ProjekatBackend.Models
         SAFETY_DOCUMENTS,
         OPREMA
     };
+
+    public enum TipPoruke
+    {
+        ERROR,
+        WARNING,
+        INFO,
+        SUCCESS
+    };
 }

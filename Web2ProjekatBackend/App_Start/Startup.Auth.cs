@@ -99,7 +99,7 @@ namespace Web2ProjekatBackend
                 appId: "502546801013232",
                 appSecret: "c7738c1af441e0394499ed6db4fa5d3e");
 
-            /*var facebookOptions = new Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions
+            var facebookOptions = new Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions
             {
                 AppId = "502546801013232",
                 AppSecret = "c7738c1af441e0394499ed6db4fa5d3e",
@@ -114,7 +114,7 @@ namespace Web2ProjekatBackend
                 },
             };
             facebookOptions.Scope.Add("email");
-            */
+           
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
             //    ClientId = "",
