@@ -39,5 +39,11 @@ namespace Web2ProjekatBackend.Repository.Repository
         {
             return db.Poruke;
         }
+
+        public void AddNotification(Poruka poruka)
+        {
+            db.Poruke.Add(poruka);
+            db.SaveChanges();
+        }
     }
 }

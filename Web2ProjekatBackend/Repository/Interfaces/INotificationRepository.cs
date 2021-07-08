@@ -13,5 +13,7 @@ namespace Web2ProjekatBackend.Repository.Interfaces
         void ReadAll(List<string> ajdijevi);
         IQueryable<Poruka> GetAllUnread();
         IQueryable<Poruka> GetAll();
+
+        void AddNotification(Poruka poruka);
     }
 }
