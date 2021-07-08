@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Web2ProjekatBackend.Models;
+using Web2ProjekatBackend.Models.DTO;
 using Web2ProjekatBackend.Repository;
 
 namespace Web2ProjekatBackend.Controllers
@@ -27,7 +28,7 @@ namespace Web2ProjekatBackend.Controllers
             }
             if (uifo.IsAdminApproved == 1)
             {
-                return BadRequest();
+                return Unauthorized();
             }
             return Ok(uifo);
         }
@@ -52,6 +53,16 @@ namespace Web2ProjekatBackend.Controllers
   
             _repo.PostUser(uInfo);
             return CreatedAtRoute("DefaultApi", new { id = uInfo.Id }, uInfo);
+        }
+
+        public IHttpActionResult Put([FromBody] UserDTO uInfo)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            _repo.UpdateUser(uInfo);
+            return Ok(_repo.GetUserInfoByUsername(uInfo.Username));
         }
 
     }
