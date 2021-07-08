@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using Web2ProjekatBackend.Models;
+using Web2ProjekatBackend.Models.DTO;
 
 namespace Web2ProjekatBackend.Repository
 {
@@ -44,6 +47,20 @@ namespace Web2ProjekatBackend.Repository
                 userInfo.IsAdminApproved = 1;
             }
             db.UserInfos.Add(userInfo);
+            db.SaveChanges();
+        }
+
+        public void UpdateUser(UserDTO userInfo)
+        {
+            UserInfo uInfo = db.UserInfos.Where(x => x.Username == userInfo.Username).First();
+            uInfo.Username = userInfo.Username;
+            uInfo.DatumRodjenja = userInfo.DatumRodjenja;
+            uInfo.NazivProfilneSlike = userInfo.NazivProfilneSlike;
+            if (uInfo.VrsteKorisnika != VrsteKorisnika.ADMINISTRATOR)
+            {
+                uInfo.IsAdminApproved = 1;
+            }
+            db.Entry<UserInfo>(uInfo).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
         }
     }

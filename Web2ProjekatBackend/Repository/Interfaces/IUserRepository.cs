@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Web2ProjekatBackend.Models;
+using Web2ProjekatBackend.Models.DTO;
 
 namespace Web2ProjekatBackend.Repository
 {
@@ -14,5 +15,6 @@ namespace Web2ProjekatBackend.Repository
 
         void ApproveByAdmin(string username, int val);
         void PostUser(UserInfo userInfo);
+        void UpdateUser(UserDTO userInfo);
     }
 }
