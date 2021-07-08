@@ -59,6 +59,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Core.4.4.1\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
@@ -68,6 +71,9 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Fluent.Infrastructure, Version=1.2.2.0, Culture=neutral, PublicKeyToken=fc0859e40caf6c5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fluent.Infrastructure.2.0.0-beta-01\lib\net461\Fluent.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -153,6 +159,9 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -244,95 +253,27 @@
     <Compile Include="Controllers\EkipaController.cs" />
     <Compile Include="Controllers\ElementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IncidentiSortController.cs" />
     <Compile Include="Controllers\NaloziRadaController.cs" />
     <Compile Include="Controllers\IncidentiController.cs" />
+    <Compile Include="Controllers\NaloziRadaSortController.cs" />
     <Compile Include="Controllers\OpremaController.cs" />
     <Compile Include="Controllers\PlanoviRadaController.cs" />
+    <Compile Include="Controllers\PlanoviRadaSortController.cs" />
     <Compile Include="Controllers\PorukaController.cs" />
     <Compile Include="Controllers\PotrosacController.cs" />
     <Compile Include="Controllers\PoziviController.cs" />
     <Compile Include="Controllers\ResolutionsController.cs" />
     <Compile Include="Controllers\SafetyDocumentsController.cs" />
+    <Compile Include="Controllers\SafetyDocumentsSortController.cs" />
     <Compile Include="Controllers\SingleIncidentController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106171236297_NovaMigraCigra.cs" />
-    <Compile Include="Migrations\202106171236297_NovaMigraCigra.Designer.cs">
-      <DependentUpon>202106171236297_NovaMigraCigra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106191656484_admin-approve.cs" />
-    <Compile Include="Migrations\202106191656484_admin-approve.Designer.cs">
-      <DependentUpon>202106191656484_admin-approve.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106201741435_Oprema change.cs" />
-    <Compile Include="Migrations\202106201741435_Oprema change.Designer.cs">
-      <DependentUpon>202106201741435_Oprema change.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106201817178_Oprema changeee.cs" />
-    <Compile Include="Migrations\202106201817178_Oprema changeee.Designer.cs">
-      <DependentUpon>202106201817178_Oprema changeee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106201858056_Migra.cs" />
-    <Compile Include="Migrations\202106201858056_Migra.Designer.cs">
-      <DependentUpon>202106201858056_Migra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106202002160_OpremaForeignKeyToString.cs" />
-    <Compile Include="Migrations\202106202002160_OpremaForeignKeyToString.Designer.cs">
-      <DependentUpon>202106202002160_OpremaForeignKeyToString.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106221655571_Description to INcidents.cs" />
-    <Compile Include="Migrations\202106221655571_Description to INcidents.Designer.cs">
-      <DependentUpon>202106221655571_Description to INcidents.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106242252547_Resolutiony.cs" />
-    <Compile Include="Migrations\202106242252547_Resolutiony.Designer.cs">
-      <DependentUpon>202106242252547_Resolutiony.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106242253441_Resolutiony2.cs" />
-    <Compile Include="Migrations\202106242253441_Resolutiony2.Designer.cs">
-      <DependentUpon>202106242253441_Resolutiony2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106251108427_removeResolutions.cs" />
-    <Compile Include="Migrations\202106251108427_removeResolutions.Designer.cs">
-      <DependentUpon>202106251108427_removeResolutions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106251109327_ReturnResolution.cs" />
-    <Compile Include="Migrations\202106251109327_ReturnResolution.Designer.cs">
-      <DependentUpon>202106251109327_ReturnResolution.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107021935367_NewOne2.cs" />
-    <Compile Include="Migrations\202107021935367_NewOne2.Designer.cs">
-      <DependentUpon>202107021935367_NewOne2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107021936031_NewOne3.cs" />
-    <Compile Include="Migrations\202107021936031_NewOne3.Designer.cs">
-      <DependentUpon>202107021936031_NewOne3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107031258118_PozivAssign.cs" />
-    <Compile Include="Migrations\202107031258118_PozivAssign.Designer.cs">
-      <DependentUpon>202107031258118_PozivAssign.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107031612238_StringIdPozivi.cs" />
-    <Compile Include="Migrations\202107031612238_StringIdPozivi.Designer.cs">
-      <DependentUpon>202107031612238_StringIdPozivi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107031622089_fewq.cs" />
-    <Compile Include="Migrations\202107031622089_fewq.Designer.cs">
-      <DependentUpon>202107031622089_fewq.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107031642180_fewqfdsafew.cs" />
-    <Compile Include="Migrations\202107031642180_fewqfdsafew.Designer.cs">
-      <DependentUpon>202107031642180_fewqfdsafew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107031643041_Calls again.cs" />
-    <Compile Include="Migrations\202107031643041_Calls again.Designer.cs">
-      <DependentUpon>202107031643041_Calls again.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107042228065_Oprema change2.cs" />
-    <Compile Include="Migrations\202107042228065_Oprema change2.Designer.cs">
-      <DependentUpon>202107042228065_Oprema change2.cs</DependentUpon>
+    <Compile Include="Migrations\202107061747108_TestMigra.cs" />
+    <Compile Include="Migrations\202107061747108_TestMigra.Designer.cs">
+      <DependentUpon>202107061747108_TestMigra.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202107062034386_Addres Add to Oprema.cs" />
     <Compile Include="Migrations\202107062034386_Addres Add to Oprema.Designer.cs">
@@ -364,14 +305,20 @@
     </Compile>
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Repository\Interfaces\IIncidentRepository.cs" />
+    <Compile Include="Repository\Interfaces\INaloziRadaRepository.cs" />
     <Compile Include="Repository\Interfaces\IOpremaRepository.cs" />
+    <Compile Include="Repository\Interfaces\IPlanoviRadaRepository.cs" />
     <Compile Include="Repository\Interfaces\IPoziviRepository.cs" />
     <Compile Include="Repository\Interfaces\IResolutionRepository.cs" />
+    <Compile Include="Repository\Interfaces\ISafetyDocumentsRepository.cs" />
     <Compile Include="Repository\Interfaces\IUserRepository.cs" />
     <Compile Include="Repository\Repository\IncidentRepository.cs" />
+    <Compile Include="Repository\Repository\NaloziRadaRepository.cs" />
     <Compile Include="Repository\Repository\OpremaRepository.cs" />
+    <Compile Include="Repository\Repository\PlanoviRadaRepository.cs" />
     <Compile Include="Repository\Repository\PozivRepository.cs" />
     <Compile Include="Repository\Repository\ResolutionRepository.cs" />
+    <Compile Include="Repository\Repository\SafetyDocumentsRepository.cs" />
     <Compile Include="Repository\Repository\UserRepository.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Service\IWebService.cs" />
@@ -437,9 +384,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Context\" />
     <Folder Include="Views\DatabaseNotification\" />
     <Folder Include="Views\Ekipa\" />
     <Folder Include="Views\Element\" />
@@ -483,62 +432,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106171236297_NovaMigraCigra.resx">
-      <DependentUpon>202106171236297_NovaMigraCigra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106191656484_admin-approve.resx">
-      <DependentUpon>202106191656484_admin-approve.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106201741435_Oprema change.resx">
-      <DependentUpon>202106201741435_Oprema change.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106201817178_Oprema changeee.resx">
-      <DependentUpon>202106201817178_Oprema changeee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106201858056_Migra.resx">
-      <DependentUpon>202106201858056_Migra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106202002160_OpremaForeignKeyToString.resx">
-      <DependentUpon>202106202002160_OpremaForeignKeyToString.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106221655571_Description to INcidents.resx">
-      <DependentUpon>202106221655571_Description to INcidents.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106242252547_Resolutiony.resx">
-      <DependentUpon>202106242252547_Resolutiony.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106242253441_Resolutiony2.resx">
-      <DependentUpon>202106242253441_Resolutiony2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106251108427_removeResolutions.resx">
-      <DependentUpon>202106251108427_removeResolutions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106251109327_ReturnResolution.resx">
-      <DependentUpon>202106251109327_ReturnResolution.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107021935367_NewOne2.resx">
-      <DependentUpon>202107021935367_NewOne2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107021936031_NewOne3.resx">
-      <DependentUpon>202107021936031_NewOne3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107031258118_PozivAssign.resx">
-      <DependentUpon>202107031258118_PozivAssign.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107031612238_StringIdPozivi.resx">
-      <DependentUpon>202107031612238_StringIdPozivi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107031622089_fewq.resx">
-      <DependentUpon>202107031622089_fewq.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107031642180_fewqfdsafew.resx">
-      <DependentUpon>202107031642180_fewqfdsafew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107031643041_Calls again.resx">
-      <DependentUpon>202107031643041_Calls again.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107042228065_Oprema change2.resx">
-      <DependentUpon>202107042228065_Oprema change2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107061747108_TestMigra.resx">
+      <DependentUpon>202107061747108_TestMigra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107062034386_Addres Add to Oprema.resx">
       <DependentUpon>202107062034386_Addres Add to Oprema.cs</DependentUpon>

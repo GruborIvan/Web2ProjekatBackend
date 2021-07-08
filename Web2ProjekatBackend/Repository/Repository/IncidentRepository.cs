@@ -37,6 +37,26 @@ namespace Web2ProjekatBackend.Repository.Repository
             return db.Incidents.Where(x => x.IdKorisnika == username);
         }
 
+        public IQueryable<Incident> SortByColumn(string columnName)
+        {
+            
+            switch (columnName)
+            {
+                case "ID":
+                    return db.Incidents.OrderBy(x => x.ID);
+                case "StartDate":
+                    return db.Incidents.OrderBy(x => x.VremeIncidenta);
+                case "Voltage":
+                    return db.Incidents.OrderBy(x => x.Voltage);
+                case "IncidentType":
+                    return db.Incidents.OrderBy(x => x.IncidentType);
+                case "AffectedPeople":
+                    return db.Incidents.OrderBy(x => x.AffectedPeople);
+                default:
+                    return db.Incidents;
+            }
+        }
+
         public void UpdateIncident(Incident incident)
         {
             db.Entry<Incident>(incident).State = System.Data.Entity.EntityState.Modified;

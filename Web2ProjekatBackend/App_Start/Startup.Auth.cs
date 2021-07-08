@@ -12,8 +12,8 @@ using Web2ProjekatBackend.Providers;
 using Web2ProjekatBackend.Models;
 using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.Facebook;
-using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace Web2ProjekatBackend
 {
@@ -52,7 +52,6 @@ namespace Web2ProjekatBackend
             // Enable the application to use bearer tokens to authenticate users
             app.UseOAuthBearerTokens(OAuthOptions);
 
-
             // Uncomment the following lines to enable logging in with third party login providers
             //app.UseMicrosoftAccountAuthentication(
             //    clientId: "",
@@ -82,6 +81,40 @@ namespace Web2ProjekatBackend
             //app.UseFacebookAuthentication(
             //    appId: "",
             //    appSecret: "");
+
+            //// Uncomment the following lines to enable logging in with third party login providers
+            //app.UseMicrosoftAccountAuthentication(
+
+            //    clientId: "",
+            //    clientSecret: "");
+
+
+
+
+            //app.UseTwitterAuthentication(
+            //    consumerKey: "",
+            //    consumerSecret: "");
+
+            app.UseFacebookAuthentication(
+                appId: "502546801013232",
+                appSecret: "c7738c1af441e0394499ed6db4fa5d3e");
+
+            var facebookOptions = new Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions
+            {
+                AppId = "502546801013232",
+                AppSecret = "c7738c1af441e0394499ed6db4fa5d3e",
+                Provider = new FacebookAuthenticationProvider()
+                {
+                    OnAuthenticated = (context) =>
+                    {
+                        context.Identity.AddClaim(new System.Security.Claims.Claim("urn:facebook:access_token", context.AccessToken, ClaimValueTypes.String, "Facebook"));
+
+                        return Task.FromResult(0);
+                    }
+                },
+            };
+            facebookOptions.Scope.Add("email");
+            app.UseFacebookAuthentication(facebookOptions);
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
