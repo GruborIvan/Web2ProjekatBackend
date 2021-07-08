@@ -6,38 +6,21 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using System.Web.Mvc;
 using Web2ProjekatBackend.Models;
+using Web2ProjekatBackend.Repository.Interfaces;
+using Web2ProjekatBackend.Repository.Repository;
 
 namespace Web2ProjekatBackend.Controllers
 {
     public class PorukaController : ApiController
     {
         // GET: PlanoviRada
-        Service.IWebService proxy;
+        INotificationRepository proxy;
         public PorukaController()
         {
-            proxy = new Service.WebService();
+            proxy = new NotificationRepository();
         }
 
-        [System.Web.Http.Authorize]
-        [ResponseType(typeof(Models.Poruka))]
-        public IHttpActionResult Put(string id, [FromBody] Poruka poziv)
-        {
-            if (poziv.IdPoruke != id)
-            {
-                return BadRequest();
-            }
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            try
-            {
-                proxy.updateEntity(poziv);
-            }
-            catch (Exception e) { return BadRequest(); }
-            return Ok(proxy.getEntity(TipEntiteta.PORUKE, poziv.IdPoruke));
-        }
-        [System.Web.Http.Authorize]
+        //[System.Web.Http.Authorize]
         [ResponseType(typeof(Models.Poruka))]
         public IHttpActionResult Post(Poruka poziv)
         {
@@ -45,57 +28,35 @@ namespace Web2ProjekatBackend.Controllers
             {
                 return BadRequest(ModelState);
             }
-            proxy.addEntity(poziv);
+            proxy.AddNotification(poziv);
             return CreatedAtRoute("DefaultApi", new { id = poziv.IdPoruke }, poziv);
         }
-        [System.Web.Http.Authorize]
-        [ResponseType(typeof(void))]
-        public IHttpActionResult Delete(string id)
-        {
-            ApplicationDbContext context = new ApplicationDbContext();
-            Poruka f = context.Poruke.ToList().Find(x => x.IdPoruke.Equals(id));
-            if (f == null)
-            {
-                return NotFound();
-            }
 
-            proxy.deleteEntity(f);
-            return Ok();
-        }
-        [System.Web.Http.Authorize]
-        [ResponseType(typeof(Poruka))]
-        public IHttpActionResult Get(string id)
+        public IEnumerable<Poruka> Get(string mode)
         {
-            Poruka f = proxy.getEntity(TipEntiteta.PORUKE, id) as Poruka;
-            if (f == null)
+            if (mode == "all")
             {
-                return NotFound();
+                return proxy.GetAll();
             }
-            return Ok(f);
-        }
-        public IEnumerable<Poruka> Get()
-        {
-            List<Poruka> pr = new List<Poruka>();
-            foreach (object item in proxy.getEntities(TipEntiteta.PORUKE))
+            else
             {
-                pr.Add(item as Poruka);
+                return proxy.GetAllUnread();
             }
-            return pr;
         }
+
         public IQueryable<Poruka> GetByType(TipPoruke tip)
         {
-            return null;
+            return proxy.GetByType(tip);
         }
 
-        public void ReadAll(List<string> ajdijevi)
+        public IHttpActionResult Put(List<string> ids)
         {
-            foreach (string item in ajdijevi)
+            if (ids.Count > 0)
             {
-                Poruka p = db.Poruke.ToList().Find(x => x.IdPoruke == item);
-                p.Procitana = true;
-                db.Entry<Poruka>(p).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
+                proxy.ReadAll(ids);
             }
+            return Ok();
         }
+
     }
 }

@@ -7,13 +7,13 @@ namespace Web2ProjekatBackend.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class novaMigracija : IMigrationMetadata
+    public sealed partial class Nova : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(novaMigracija));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Nova));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107081538304_novaMigracija"; }
+            get { return "202107081644105_Nova"; }
         }
         
         string IMigrationMetadata.Source
