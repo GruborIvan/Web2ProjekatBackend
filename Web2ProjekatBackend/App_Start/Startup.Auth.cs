@@ -53,9 +53,9 @@ namespace Web2ProjekatBackend
             app.UseOAuthBearerTokens(OAuthOptions);
 
             // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+            app.UseMicrosoftAccountAuthentication(
+                clientId: "2e04b092-f02d-4264-a98a-c9af52293561",
+                clientSecret: "sPD75~2yn~T.a6XppuL4Qd94AR.iyO3pgg");
 
             //var facebookOptions = new Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions
             //{
@@ -99,7 +99,7 @@ namespace Web2ProjekatBackend
                 appId: "502546801013232",
                 appSecret: "c7738c1af441e0394499ed6db4fa5d3e");
 
-            var facebookOptions = new Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions
+            /*var facebookOptions = new Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions
             {
                 AppId = "502546801013232",
                 AppSecret = "c7738c1af441e0394499ed6db4fa5d3e",
@@ -114,8 +114,7 @@ namespace Web2ProjekatBackend
                 },
             };
             facebookOptions.Scope.Add("email");
-            app.UseFacebookAuthentication(facebookOptions);
-
+            */
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
             //    ClientId = "",
