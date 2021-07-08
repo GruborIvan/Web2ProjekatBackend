@@ -334,6 +334,10 @@
     <Compile Include="Migrations\202107042228065_Oprema change2.Designer.cs">
       <DependentUpon>202107042228065_Oprema change2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107062034386_Addres Add to Oprema.cs" />
+    <Compile Include="Migrations\202107062034386_Addres Add to Oprema.Designer.cs">
+      <DependentUpon>202107062034386_Addres Add to Oprema.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -535,6 +539,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107042228065_Oprema change2.resx">
       <DependentUpon>202107042228065_Oprema change2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107062034386_Addres Add to Oprema.resx">
+      <DependentUpon>202107062034386_Addres Add to Oprema.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

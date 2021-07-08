@@ -12,5 +12,6 @@ namespace Web2ProjekatBackend.Repository.Interfaces
         IEnumerable<Resolution> GetResolutions();
         Resolution GetResolutionsForIncident(string incidentId);
         void AddResolution(Resolution resolution);
+        void UpdateResolution(Resolution resolution);
     }
 }

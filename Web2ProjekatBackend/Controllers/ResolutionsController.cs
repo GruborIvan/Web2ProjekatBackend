@@ -46,6 +46,20 @@ namespace Web2ProjekatBackend.Controllers
             proxy.AddResolution(resolution);
             return CreatedAtRoute("DefaultApi", new { id = resolution.Id }, resolution);
         }
+
+        public IHttpActionResult Put([FromBody] Resolution resolution, int id)
+        {
+            if (resolution.Id != id)
+            {
+                return BadRequest();
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            proxy.UpdateResolution(resolution);
+            return Ok(proxy.GetResolutionsForIncident(resolution.IncidentId));
+        }
        
     }
 }
