@@ -13,5 +13,6 @@ namespace Web2ProjekatBackend.Models.DTO
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string NazivProfilneSlike { get; set; }
+        public VrsteKorisnika UserType { get; set; }
     }
 }

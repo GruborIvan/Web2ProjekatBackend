@@ -60,6 +60,7 @@ namespace Web2ProjekatBackend.Repository
             {
                 uInfo.IsAdminApproved = 1;
             }
+            uInfo.VrsteKorisnika = userInfo.UserType;
             db.Entry<UserInfo>(uInfo).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
         }
