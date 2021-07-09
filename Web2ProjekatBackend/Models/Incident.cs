@@ -60,6 +60,8 @@ namespace Web2ProjekatBackend.Models
 
         public ICollection<Oprema> Oprema { get; set; }
 
+        public int EkipaId { get; set; }
+
         public Incident() { }
 
         public Incident(string id, TipIncidenta tip, int prio, bool conf, string status, DateTime eta, DateTime ata, DateTime etr, DateTime vrijeme, int aff, int pozivi, int voltage)

@@ -15,5 +15,6 @@ namespace Web2ProjekatBackend.Repository.Interfaces
         IQueryable<Poruka> GetAll();
 
         void AddNotification(Poruka poruka);
+        void MarkNotificationRead(string notificationId);
     }
 }

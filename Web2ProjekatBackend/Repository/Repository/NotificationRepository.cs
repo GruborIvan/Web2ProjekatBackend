@@ -45,5 +45,13 @@ namespace Web2ProjekatBackend.Repository.Repository
             db.Poruke.Add(poruka);
             db.SaveChanges();
         }
+
+        public void MarkNotificationRead(string notificationId)
+        {
+            Poruka p = db.Poruke.Find(notificationId);
+            p.Procitana = true;
+            db.Entry<Poruka>(p).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+        }
     }
 }

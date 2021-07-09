@@ -10,21 +10,16 @@ namespace Web2ProjekatBackend.Models
     [Table("Ekipe")]
     public class Ekipa
     {
-
-        [Key]
-        public string IdEkipe { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string NazivEkipe { get; set; }
- 
 
         public Ekipa() { }
-        public Ekipa(string idEkipe, string naziv)
+        public Ekipa(int id, string naziv)
         {
-
-            this.IdEkipe = idEkipe;
+            this.Id = id;
             this.NazivEkipe = naziv;
-
         }
 
     }
