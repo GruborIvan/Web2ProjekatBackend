@@ -17,6 +17,7 @@ namespace Web2ProjekatBackend.Models
         public DateTime DatumRodjenja { get; set; }
         public string Adresa { get; set; }
         public int IsAdminApproved { get; set; }
+        public int EkipaId { get; set; }
 
         public UserInfo(string username)
         {

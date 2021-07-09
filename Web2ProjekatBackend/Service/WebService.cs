@@ -12,13 +12,7 @@ namespace Web2ProjekatBackend.Service
         {
             ApplicationDbContext context = new ApplicationDbContext();
 
-            if (entity is Ekipa)
-            {
-                if (context.Ekipe.ToList().Find(x => x.IdEkipe.Equals((entity as Ekipa).IdEkipe)) != null) { return false; }
-                context.Ekipe.Add(entity as Ekipa);
-                context.SaveChanges();
-                return true;
-            }else if (entity is Element)
+            if (entity is Element)
             {
                 if (context.Elementi.ToList().Find(x => x.ID.Equals((entity as Element).ID)) != null) { return false; }
                 context.Elementi.Add(entity as Element);
@@ -95,21 +89,7 @@ namespace Web2ProjekatBackend.Service
         {
             ApplicationDbContext context = new ApplicationDbContext();
 
-            if (entity is Ekipa)
-            {
-                foreach (object item in context.PlanoviRada.ToList().FindAll(x => x.Ekipa.Equals((entity as Ekipa).IdEkipe)))
-                {
-                    deleteEntity(item);
-                }
-                foreach (object item in context.SafetyDocuments.ToList().FindAll(x => x.Ekipa.Equals((entity as Ekipa).IdEkipe)))
-                {
-                    deleteEntity(item);
-                }
-                context.Ekipe.Remove(context.Ekipe.ToList().Find(x => x.IdEkipe.Equals((entity as Ekipa).IdEkipe)));
-                context.SaveChanges();
-                return true;
-            }
-            else if (entity is Element)
+            if (entity is Element)
             {
                 context.Elementi.Remove(context.Elementi.ToList().Find(x => x.ID.Equals((entity as Element).ID)));
                 context.SaveChanges();
@@ -199,12 +179,6 @@ namespace Web2ProjekatBackend.Service
             List<object> list = new List<object>(); 
 
             switch (tip){
-                case TipEntiteta.EKIPE:
-                    foreach(object item in context.Ekipe)
-                    {
-                        list.Add(item);
-                    }
-                    return list;
                 case TipEntiteta.ELEMENTS:
                     foreach (object item in context.Elementi)
                     {
@@ -247,18 +221,6 @@ namespace Web2ProjekatBackend.Service
                         list.Add(item);
                     }
                     return list;
-                //case TipEntiteta.POZIVI:
-                //    foreach (object item in context.Pozivi)
-                //    {
-                //        list.Add(item);
-                //    }
-                //    return list;
-                //case TipEntiteta.RESOLUTIONS:
-                //    foreach (object item in context.Resolutions)
-                //    {
-                //        list.Add(item);
-                //    }
-                //    return list;
                 case TipEntiteta.SAFETY_DOCUMENTS:
                     foreach (object item in context.SafetyDocuments)
                     {
@@ -277,8 +239,6 @@ namespace Web2ProjekatBackend.Service
 
             switch (tip)
             {
-                case TipEntiteta.EKIPE:
-                    return context.Ekipe.FirstOrDefault(x => x.IdEkipe == id);
                 case TipEntiteta.ELEMENTS:
                     return context.Elementi.FirstOrDefault(x => x.ID == id);
                 case TipEntiteta.INCIDENTS:
@@ -307,15 +267,7 @@ namespace Web2ProjekatBackend.Service
         {
             ApplicationDbContext context = new ApplicationDbContext();
 
-
-            if (entity is Ekipa)
-            {
-                context.Ekipe.Remove(context.Ekipe.ToList().Find(x => x.IdEkipe.Equals((entity as Ekipa).IdEkipe)));
-                context.Ekipe.Add(entity as Ekipa);
-                context.SaveChanges();
-                return true;
-            }
-            else if (entity is Element)
+            if (entity is Element)
             {
                 context.Elementi.Remove(context.Elementi.ToList().Find(x => x.ID.Equals((entity as Element).ID)));
                 context.Elementi.Add(entity as Element);
@@ -364,13 +316,6 @@ namespace Web2ProjekatBackend.Service
                 context.SaveChanges();
                 return true;
             }
-            //else if (entity is Poziv)
-            //{
-            //    context.Pozivi.Remove(context.Pozivi.ToList().Find(x => x.Id.Equals((entity as Poziv).Id)));
-            //    context.Pozivi.Add(entity as Poziv);
-            //    context.SaveChanges();
-            //    return true;
-            //}
             else if (entity is Resolution)
             {
                 //context.Resolutions.Remove(context.Resolutions.ToList().Find(x => x.IdRes.Equals((entity as Resolution).IdRes)));

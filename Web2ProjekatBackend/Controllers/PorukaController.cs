@@ -51,6 +51,10 @@ namespace Web2ProjekatBackend.Controllers
 
         public IHttpActionResult Put(List<string> ids)
         {
+            if (ids == null)
+            {
+                return Ok();
+            }
             if (ids.Count > 0)
             {
                 proxy.ReadAll(ids);

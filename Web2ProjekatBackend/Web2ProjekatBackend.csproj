@@ -249,6 +249,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CrewController.cs" />
     <Compile Include="Controllers\DatabaseNotificationController.cs" />
     <Compile Include="Controllers\EkipaController.cs" />
     <Compile Include="Controllers\ElementController.cs" />
@@ -274,6 +275,14 @@
     <Compile Include="Migrations\202107081644105_Nova.cs" />
     <Compile Include="Migrations\202107081644105_Nova.Designer.cs">
       <DependentUpon>202107081644105_Nova.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107091905567_fwqefweq.cs" />
+    <Compile Include="Migrations\202107091905567_fwqefweq.Designer.cs">
+      <DependentUpon>202107091905567_fwqefweq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107091918077_Crew.cs" />
+    <Compile Include="Migrations\202107091918077_Crew.Designer.cs">
+      <DependentUpon>202107091918077_Crew.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -301,6 +310,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Repository\Interfaces\ICrewRepository.cs" />
     <Compile Include="Repository\Interfaces\IIncidentRepository.cs" />
     <Compile Include="Repository\Interfaces\INaloziRadaRepository.cs" />
     <Compile Include="Repository\Interfaces\INotificationRepository.cs" />
@@ -310,6 +320,7 @@
     <Compile Include="Repository\Interfaces\IResolutionRepository.cs" />
     <Compile Include="Repository\Interfaces\ISafetyDocumentsRepository.cs" />
     <Compile Include="Repository\Interfaces\IUserRepository.cs" />
+    <Compile Include="Repository\Repository\CrewRepository.cs" />
     <Compile Include="Repository\Repository\IncidentRepository.cs" />
     <Compile Include="Repository\Repository\NaloziRadaRepository.cs" />
     <Compile Include="Repository\Repository\NotificationRepository.cs" />
@@ -433,6 +444,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202107081644105_Nova.resx">
       <DependentUpon>202107081644105_Nova.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107091905567_fwqefweq.resx">
+      <DependentUpon>202107091905567_fwqefweq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107091918077_Crew.resx">
+      <DependentUpon>202107091918077_Crew.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
