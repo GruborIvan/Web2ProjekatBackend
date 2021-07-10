@@ -300,6 +300,7 @@
     <Compile Include="Models\Poruka.cs" />
     <Compile Include="Models\Potrosac.cs" />
     <Compile Include="Models\Poziv.cs" />
+    <Compile Include="Models\PrioAddress.cs" />
     <Compile Include="Models\Resolution.cs" />
     <Compile Include="Models\SafetyDocument.cs" />
     <Compile Include="Models\UserInfo.cs" />
