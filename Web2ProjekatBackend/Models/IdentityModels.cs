@@ -33,6 +33,7 @@ namespace Web2ProjekatBackend.Models
         public DbSet<SafetyDocument> SafetyDocuments { get; set; }
         public DbSet<UserInfo> UserInfos { get; set; }
         public DbSet<Oprema> Oprema { get; set; }
+        public DbSet<PrioAddress> PrioAddresses { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

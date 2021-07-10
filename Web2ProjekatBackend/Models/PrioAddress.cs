@@ -10,6 +10,17 @@ namespace Web2ProjekatBackend.Models
     [Table("PrioAddress")]
     public class PrioAddress
     {
+        public PrioAddress()
+        {
+        }
+
+        public PrioAddress(int id, string address, int prio)
+        {
+            Id = id;
+            this.address = address ?? throw new ArgumentNullException(nameof(address));
+            this.prio = prio;
+        }
+
         [Key]
         public int Id { get; set; }
         [Required]
@@ -17,5 +28,7 @@ namespace Web2ProjekatBackend.Models
         public string address { get; set; }
         [Required]
         public int prio { get; set; }
+
+
     }
 }
