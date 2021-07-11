@@ -273,9 +273,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107101634280_novaMigracija2.cs" />
-    <Compile Include="Migrations\202107101634280_novaMigracija2.Designer.cs">
-      <DependentUpon>202107101634280_novaMigracija2.cs</DependentUpon>
+    <Compile Include="Migrations\202107101659437_Update.cs" />
+    <Compile Include="Migrations\202107101659437_Update.Designer.cs">
+      <DependentUpon>202107101659437_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107101744492_feqwfw.cs" />
+    <Compile Include="Migrations\202107101744492_feqwfw.Designer.cs">
+      <DependentUpon>202107101744492_feqwfw.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -437,8 +441,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107101634280_novaMigracija2.resx">
-      <DependentUpon>202107101634280_novaMigracija2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107101659437_Update.resx">
+      <DependentUpon>202107101659437_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107101744492_feqwfw.resx">
+      <DependentUpon>202107101744492_feqwfw.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

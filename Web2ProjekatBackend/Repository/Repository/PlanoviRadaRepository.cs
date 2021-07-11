@@ -22,8 +22,8 @@ namespace Web2ProjekatBackend.Repository.Repository
             {
                 case "ID":
                     return db.PlanoviRada.OrderBy(x => x.IdPlana);
-                case "TipPlanaRada":
-                    return db.PlanoviRada.OrderBy(x => x.DocumentType);
+                case "Tip":
+                    return db.PlanoviRada.OrderBy(x => x.Type);
                 case "CreatedTime":
                     return db.PlanoviRada.OrderBy(x => x.CreatedOn);
                 case "StartDate":

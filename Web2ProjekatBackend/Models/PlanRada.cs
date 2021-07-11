@@ -14,7 +14,7 @@ namespace Web2ProjekatBackend.Models
         public string IdPlana { get; set; }
 
         [Required]
-        public TipRada DocumentType { get; set; }
+        public TipRada Type { get; set; }
         [Required]
         [StringLength(255)]
         public string IdNalogaRada { get; set; }
@@ -59,7 +59,7 @@ namespace Web2ProjekatBackend.Models
             string kompanija, string telefonskibroj, DateTime createdon)
         {
 
-            this.DocumentType = type;
+            this.Type = type;
             this.IdNalogaRada = idNaloga;
             this.Status = status;
             this.IdIncidenta = idInc;
