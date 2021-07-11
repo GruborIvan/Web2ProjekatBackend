@@ -23,9 +23,9 @@ namespace Web2ProjekatBackend.Repository.Repository
                     return db.SafetyDocuments.OrderBy(x => x.Id);
                 case "PhoneNumber":
                     return db.SafetyDocuments.OrderBy(x => x.TelefonskiBroj);
-                case "DocumentType":
-                    return db.SafetyDocuments.OrderBy(x => x.SafetyType);
-                case "CreatedOn":
+                case "Tip":
+                    return db.SafetyDocuments.OrderBy(x => x.Type);
+                case "CreatedTime":
                     return db.SafetyDocuments.OrderBy(x => x.CreatedOn);
                 default:
                     return db.SafetyDocuments;

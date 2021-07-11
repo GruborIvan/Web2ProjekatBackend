@@ -13,7 +13,7 @@ namespace Web2ProjekatBackend.Models
         [Key]
         public string IdNaloga { get; set; }
         [Required]
-        public TipRada NalogType { get; set; }
+        public TipRada Type { get; set; }
         [Required]
         [StringLength(255)]
         public string Status { get; set; }
@@ -52,7 +52,7 @@ namespace Web2ProjekatBackend.Models
         public NalogRada() { }
         public NalogRada(string idNaloga, TipRada type, string status, string id, string ulica, DateTime pocetak, DateTime kraj, string createdby, string svrha, string beleske, bool hitno, string kompanija, string broj, DateTime created)
         {
-            this.NalogType = type;
+            this.Type = type;
             this.IdNaloga = idNaloga;
             this.Status = status;
             this.IdIncidenta = id;

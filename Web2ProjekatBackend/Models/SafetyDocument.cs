@@ -13,7 +13,7 @@ namespace Web2ProjekatBackend.Models
         [Key]
         public string Id { get; set; }
         [Required]
-        public TipRada SafetyType { get; set; }
+        public TipRada Type { get; set; }
         [Required]
         [StringLength(255)]
         public string Status { get; set; }
@@ -44,7 +44,7 @@ namespace Web2ProjekatBackend.Models
         {
 
             this.Id = id;
-            this.SafetyType = tip;
+            this.Type = tip;
             this.Status = status;
             this.CreatedBy = createdby;
             this.IdPlanRada = idnalogarada;
