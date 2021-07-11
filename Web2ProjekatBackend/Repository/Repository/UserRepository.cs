@@ -26,6 +26,29 @@ namespace Web2ProjekatBackend.Repository
             db.SaveChanges();
         }
 
+        public void AssignUserToCrew(CrewPostDTO dto)
+        {
+            UserInfo uInfo = db.UserInfos.Find(dto.UserId);
+            if (uInfo != null)
+            {
+                try
+                {
+                    uInfo.EkipaId = dto.CrewId;
+                    db.Entry<UserInfo>(uInfo).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+                catch(DBConcurrencyException e)
+                {
+                    Trace.TraceInformation(e.Message);
+                }
+            }
+        }
+
+        public IQueryable<UserInfo> GetCrewMembers()
+        {
+            return db.UserInfos.Where(x => x.VrsteKorisnika == VrsteKorisnika.CLANEKIPE).Where(x => x.EkipaId == 0);
+        }
+
         public UserInfo GetUserInfoByUsername(string username)
         {
             return db.UserInfos.Where(x => x.Username == username).FirstOrDefault();

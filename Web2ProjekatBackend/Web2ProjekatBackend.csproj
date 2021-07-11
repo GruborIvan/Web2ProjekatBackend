@@ -250,6 +250,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CrewController.cs" />
+    <Compile Include="Controllers\CrewMembersController.cs" />
     <Compile Include="Controllers\DatabaseNotificationController.cs" />
     <Compile Include="Controllers\EkipaController.cs" />
     <Compile Include="Controllers\ElementController.cs" />
@@ -285,6 +286,7 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DTO\CrewAssignDTO.cs" />
+    <Compile Include="Models\DTO\CrewPostDTO.cs" />
     <Compile Include="Models\DTO\UserDTO.cs" />
     <Compile Include="Models\Ekipa.cs" />
     <Compile Include="Models\Element.cs" />
