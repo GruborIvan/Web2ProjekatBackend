@@ -4,6 +4,7 @@ namespace Web2ProjekatBackend.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using Web2ProjekatBackend.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Web2ProjekatBackend.Models.ApplicationDbContext>
     {
@@ -18,6 +19,7 @@ namespace Web2ProjekatBackend.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
         }
     }
 }

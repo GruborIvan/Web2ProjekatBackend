@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Web2ProjekatBackend.Models;
 using Web2ProjekatBackend.Repository.Interfaces;
 using Web2ProjekatBackend.Repository.Repository;
+using RouteAttribute = System.Web.Http.RouteAttribute;
 
 namespace Web2ProjekatBackend.Controllers
 {
@@ -27,7 +28,6 @@ namespace Web2ProjekatBackend.Controllers
         {
             return proxy.GetPozivi();
         }
-
 
         //[System.Web.Http.Authorize]
         [ResponseType(typeof(Poziv))]

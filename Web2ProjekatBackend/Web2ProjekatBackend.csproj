@@ -265,6 +265,7 @@
     <Compile Include="Controllers\PorukaController.cs" />
     <Compile Include="Controllers\PotrosacController.cs" />
     <Compile Include="Controllers\PoziviController.cs" />
+    <Compile Include="Controllers\PoziviSortController.cs" />
     <Compile Include="Controllers\PrioAddressController.cs" />
     <Compile Include="Controllers\ResolutionsController.cs" />
     <Compile Include="Controllers\SafetyDocumentsController.cs" />
@@ -274,13 +275,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107101659437_Update.cs" />
-    <Compile Include="Migrations\202107101659437_Update.Designer.cs">
-      <DependentUpon>202107101659437_Update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107101744492_feqwfw.cs" />
-    <Compile Include="Migrations\202107101744492_feqwfw.Designer.cs">
-      <DependentUpon>202107101744492_feqwfw.cs</DependentUpon>
+    <Compile Include="Migrations\202109260709574_initialone.cs" />
+    <Compile Include="Migrations\202109260709574_initialone.Designer.cs">
+      <DependentUpon>202109260709574_initialone.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -443,11 +440,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107101659437_Update.resx">
-      <DependentUpon>202107101659437_Update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107101744492_feqwfw.resx">
-      <DependentUpon>202107101744492_feqwfw.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202109260709574_initialone.resx">
+      <DependentUpon>202109260709574_initialone.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

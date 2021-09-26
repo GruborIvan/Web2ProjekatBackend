@@ -31,5 +31,19 @@ namespace Web2ProjekatBackend.Repository.Repository
         {
             return db.Pozivi.Where(x => x.IncidentId == incidentId);
         }
+
+        public IEnumerable<Poziv> GetPoziviSorted(string columnName)
+        {
+            List<Poziv> pozivi = db.Pozivi.ToList();
+
+            switch(columnName)
+            {
+                case "Razlog" : return pozivi.OrderBy(x => x.Razlog);
+                case "UsernameKor": return pozivi.OrderBy(x => x.UsernameKor);
+                case "Kvar": return pozivi.OrderBy(x => x.Kvar);
+                case "IncidentId": return pozivi.OrderBy(x => x.IncidentId);
+                default: return pozivi;
+            }
+        }
     }
 }

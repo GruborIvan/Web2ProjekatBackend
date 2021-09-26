@@ -11,6 +11,7 @@ namespace Web2ProjekatBackend.Repository.Interfaces
     {
         IEnumerable<Poziv> GetPozivi();
         IEnumerable<Poziv> GetPoziviForIncident(string incidentId);
+        IEnumerable<Poziv> GetPoziviSorted(string columnName);
         void AddPoziv(Poziv poziv);
     }
 }
