@@ -11,7 +11,6 @@ namespace Web2ProjekatBackend.Models
     [Table("Incidents")]
     public class Incident
     {
-
         [Key]
         public string ID { get; set; }
 

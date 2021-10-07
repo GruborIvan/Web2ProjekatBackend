@@ -12,29 +12,38 @@ namespace Web2ProjekatBackend.Models
     {
         [Key]
         public string Id { get; set; }
+
         [Required]
         public TipRada Type { get; set; }
+
         [Required]
         [StringLength(255)]
         public string Status { get; set; }
+
         [Required]
         [StringLength(255)]
         public string CreatedBy { get; set; }
+
         [Required]
         [StringLength(255)]
         public string IdPlanRada { get; set; }
+
         [Required]
         [StringLength(255)]
-        public string Ekipa { get; set; } // Uzimamo iz naloga za rad
+        public string Ekipa { get; set; } 
+
         [Required]
         [StringLength(255)]
         public string Detalji { get; set; }
+
         [Required]
         [StringLength(255)]
         public string Beleske { get; set; }
+
         [Required]
         [StringLength(255)]
         public string TelefonskiBroj { get; set; }
+
         [Required]
         public DateTime CreatedOn { get; set; }
 

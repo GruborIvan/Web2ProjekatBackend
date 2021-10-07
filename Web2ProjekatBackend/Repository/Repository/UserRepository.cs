@@ -65,6 +65,10 @@ namespace Web2ProjekatBackend.Repository
             {
                 userInfo.IsAdminApproved = 0;
             }
+            else if (userInfo.Username == "ivan.grubor@gmail.com")
+            {
+                userInfo.IsAdminApproved = 1;
+            }
             else
             {
                 userInfo.IsAdminApproved = 1;
@@ -79,6 +83,8 @@ namespace Web2ProjekatBackend.Repository
             uInfo.Username = userInfo.Username;
             uInfo.DatumRodjenja = userInfo.DatumRodjenja;
             uInfo.NazivProfilneSlike = userInfo.NazivProfilneSlike;
+            uInfo.Ime = userInfo.Ime;
+            uInfo.Prezime = userInfo.Prezime;
             if (uInfo.VrsteKorisnika != VrsteKorisnika.ADMINISTRATOR)
             {
                 uInfo.IsAdminApproved = 1;

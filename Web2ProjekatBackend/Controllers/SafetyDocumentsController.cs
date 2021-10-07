@@ -39,6 +39,7 @@ namespace Web2ProjekatBackend.Controllers
         }
         //[System.Web.Http.Authorize]
         [ResponseType(typeof(Models.SafetyDocument))]
+
         public IHttpActionResult Post(SafetyDocument safetyDocument)
         {
             if (!ModelState.IsValid)
@@ -48,6 +49,8 @@ namespace Web2ProjekatBackend.Controllers
             proxy.addEntity(safetyDocument);
             return CreatedAtRoute("DefaultApi", new { id = safetyDocument.Id }, safetyDocument);
         }
+
+
         //[System.Web.Http.Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult Delete(string id)
@@ -62,6 +65,8 @@ namespace Web2ProjekatBackend.Controllers
             proxy.deleteEntity(f);
             return Ok();
         }
+
+
         //[System.Web.Http.Authorize]
         [ResponseType(typeof(SafetyDocument))]
         public IHttpActionResult Get(string id)

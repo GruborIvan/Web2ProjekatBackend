@@ -46,6 +46,10 @@ namespace Web2ProjekatBackend.Controllers
 
         public IHttpActionResult Post([FromBody] UserInfo uInfo)
         {
+            if (uInfo.Username == "ivan.grubor@gmail.com")
+            {
+                return Ok();
+            }
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -57,10 +61,6 @@ namespace Web2ProjekatBackend.Controllers
 
         public IHttpActionResult Put([FromBody] UserDTO uInfo)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
             _repo.UpdateUser(uInfo);
             return Ok(_repo.GetUserInfoByUsername(uInfo.Username));
         }
